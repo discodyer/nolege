@@ -5,11 +5,11 @@ tags:
   - 遥控
   - ESPHome
 ---
-# 使用ESPHome控制RCA电视遥控器
+# 使用ESPHome代替RCA电视遥控器
 
 ## 逆向通信协议
 
-今天的主角是下面这个电视机，网上没有太多它的资料。
+今天的主角是下面这个FFALCON电视机，网上没有太多它的资料，应该是属于TCL品牌的电视。
 
 ![FFALCON-TV](images/RCA/FFALCON-TV.webp)
 
