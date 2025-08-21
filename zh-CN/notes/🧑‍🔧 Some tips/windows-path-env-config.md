@@ -1,7 +1,9 @@
 ---
-title: 设置Path环境变量
+title: windows设置Path环境变量
+url: windows-path-env-config111111
+path: windows-path-env-config111111
 ---
-# 设置Path环境变量
+# windows设置Path环境变量
 
 页面大纲：
 [[toc]]

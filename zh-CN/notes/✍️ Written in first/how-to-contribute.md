@@ -27,7 +27,7 @@ title: 如何贡献内容
 
 根据Github注册页面的引导注册就行了，这里推荐阅读[GitHub 入门文档](https://docs.github.com/zh/get-started)，里面的内容非常全面
 
-可以根据Github入门文档学习如何使用Git，也可以根据本文档的教程指引，[Git for windows 安装教程](/zh-CN/笔记/👋环境配置/Git%20for%20windows%20安装配置.md)
+可以根据Github入门文档学习如何使用Git，也可以根据本文档的教程指引，[Git for windows 安装教程](/zh-CN/notes/👋%20Env%20Configuration/Git-for-windows-setup.md)
 
 到这里你应该完成了Github的注册，以及Git的安装。
 
@@ -80,7 +80,7 @@ git config --global user.email "YOUR_EMAIL" # 换成你的电子邮件地址
 
 ##### 使用命令行克隆仓库
 
-如果我们[设置了SSH密钥](/文档/🧑‍🔧一些技巧/SSH%20的一些奇技淫巧.md)，就可以使用SSH克隆，或者使用https和Github客户端克隆
+如果我们[设置了SSH密钥](/zh-CN/notes/🧑‍🔧%20Some%20tips/ssh-tips-tricks.md)，就可以使用SSH克隆，或者使用https和Github客户端克隆
 
 使用`git clone`命令就可以克隆仓库到本地，下面是命令举例
 
@@ -221,13 +221,13 @@ pnpm docs:build
 插入一个链接，以本页面为例，首先输入括号`[]()`，然后在VSCode下，输入一个`/`就会出现选单，可以快速选择路径
 
 ```markdown
-[](/zh-CN/笔记/✍️写在前面/如何贡献内容.md)
+[](/zh-CN/notes/✍️%20Written%20in%20first/how-to-contribute.md)
 ```
 
 链接到一个文档的某个章节，就在.md后加上章节名称，例如
 
 ```markdown
-[](/zh-CN/笔记/✍️写在前面/如何贡献内容.md#链接到其他页面)
+[](/zh-CN/notes/✍️%20Written%20in%20front/how-to-contribute.md#链接到其他页面)
 ```
 
 推荐在输入一个`#`后使用VSCode选单选择，或者去掉中文标题里的空格，英文标题用`-`连字符隔开

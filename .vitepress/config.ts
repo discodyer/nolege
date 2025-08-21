@@ -39,7 +39,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '主页', link: '/zh-CN/' },
-          { text: '笔记', link: '/zh-CN/笔记/' },
+          { text: '笔记', link: '/zh-CN/notes/' },
           { text: '编目 Catalog', link: '/zh-CN/编目 Catalog/' },
           { text: '最近更新', link: '/zh-CN/toc' },
         ],
@@ -54,7 +54,7 @@ export default defineConfig({
           text: '编辑本页面',
         },
         sidebar: calculateSidebar([
-          { folderName: 'zh-CN/笔记', separate: true },
+          { folderName: 'zh-CN/notes', separate: true },
           { folderName: 'zh-CN/编目 Catalog', separate: true },
         ], 'zh-CN'),
         footer: {

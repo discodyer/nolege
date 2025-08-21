@@ -11,8 +11,8 @@ title: C++ OpenCV 安装教程
 阅读本篇文章需要的前置知识
 
 - (如果使用的是linux操作系统) Linux 使用方法
-- [如何设置环境变量](../🧑‍🔧%20一些技巧/windows设置Path环境变量.md)
-- 会使用至少一个解压缩软件 [7-Zip 安装配置](7-Zip%20安装配置.md)
+- [如何设置环境变量](../🧑‍🔧%20Some%20tips/windows-path-env-config.md)
+- 会使用至少一个解压缩软件 [7-Zip 安装配置](7-Zip-install-setup.md)
 - 有一些C++的基础
 - 会使用CMake
 
@@ -78,7 +78,7 @@ cmake --build .
 
 :::
 
-参考这篇文章，安装C++环境 --> [Visual Studio Code 安装配置](Visual%20Studio%20Code%20安装配置.md)
+参考这篇文章，安装C++环境 --> [Visual Studio Code 安装配置](Visual-Studio-Code-setup.md)
 
 接下来需要下载一份[编译好的opencv](https://github.com/huihut/OpenCV-MinGW-Build)，下载`4.5.5的release`就可以了，然后解压到一个位置，我这里是解压到`C:/opencv/`文件夹下了，如果你不是用的这个位置，请自己修改`CMakeLists.txt`的相应位置
 

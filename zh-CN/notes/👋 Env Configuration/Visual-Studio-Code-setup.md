@@ -13,8 +13,8 @@ title: Visual Studio Code 安装配置
 
 阅读本篇文章需要的前置知识
 
-- 电脑已经[安装Git](Git%20for%20windows%20安装配置.md)并且会[使用Git](https://www.runoob.com/git/git-tutorial.html)
-- 会[设置环境变量](../🧑‍🔧%20一些技巧/windows设置Path环境变量.md)
+- 电脑已经[安装Git](Git-for-windows-setup.md)并且会[使用Git](https://www.runoob.com/git/git-tutorial.html)
+- 会[设置环境变量](../🧑‍🔧%20Some%20tips/windows-path-env-config.md)
 
 ## 简介
 
@@ -58,8 +58,8 @@ MSYS2 是一个强大的工具，特别适合那些习惯了 Linux 或 Unix 环�
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/笔记/👋 环境配置/images/vscode/vscode-download.png" />
-  <img src="/zh-CN/笔记/👋 环境配置/images/vscode/msys2-download.png" />
+  <img src="/zh-CN/notes/👋 环境配置/images/vscode/vscode-download.png" />
+  <img src="/zh-CN/notes/👋 环境配置/images/vscode/msys2-download.png" />
 </div>
 
 <style>
@@ -154,7 +154,7 @@ MSYS2 是一个强大的工具，特别适合那些习惯了 Linux 或 Unix 环�
 
 ![](images/vscode/msys2-install-6.png)
 
-参考[这个文章](/文档/🧑‍🔧一些技巧/windows设置Path环境变量.md)，**修改环境变量**，添加一条`C:\msys64\ucrt64\bin`如果你修改过安装位置需要把开头的路径修改成对应的位置
+参考[这个文章](/zh-CN/notes/🧑‍🔧%20Some%20tips/windows-path-env-config.md)，**修改环境变量**，添加一条`C:\msys64\ucrt64\bin`如果你修改过安装位置需要把开头的路径修改成对应的位置
 
 在`开始菜单`中找到`MSYS2 UCRT64`文件夹，然后点击运行，会出现上面的黑色终端窗口
 

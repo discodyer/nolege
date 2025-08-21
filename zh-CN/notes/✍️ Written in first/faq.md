@@ -9,7 +9,7 @@ title: 常见问题
 
 ## 提问的方法
 
-详见[如何提问](/文档/✍️写在前面/如何提问.md)
+详见[如何提问](/zh-CN/notes/✍️%20Written%20in%20first/how-to-ask-questions.md)
 
 ## `conda init : need sudo`
 
