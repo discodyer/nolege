@@ -106,8 +106,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/keil5-install-7.png" />
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/keil5-install-8.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-7.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-8.png" />
 </div>
 
 <style>
