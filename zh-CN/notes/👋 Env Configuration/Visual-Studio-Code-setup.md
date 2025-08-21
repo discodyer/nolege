@@ -58,8 +58,8 @@ MSYS2 是一个强大的工具，特别适合那些习惯了 Linux 或 Unix 环�
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/vscode/vscode-download.png" />
-  <img src="/zh-CN/notes/👋 环境配置/images/vscode/msys2-download.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/vscode/vscode-download.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/vscode/msys2-download.png" />
 </div>
 
 <style>
