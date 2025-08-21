@@ -149,8 +149,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/keil5-install-9.png" />
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/keil5-install-10.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-9.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-10.png" />
 </div>
 
 <style>
@@ -258,8 +258,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/ch340-front.jpg" />
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/ch340-back.jpg" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/ch340-front.jpg" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/ch340-back.jpg" />
 </div>
 
 <style>
@@ -301,7 +301,7 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/stm32f103rct6-front.jpg" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/stm32f103rct6-front.jpg" />
 </div>
 
 <style>
@@ -341,7 +341,7 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/stlinkv2-front.jpg" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/stlinkv2-front.jpg" />
 </div>
 
 <style>
@@ -381,8 +381,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/daplink-front.jpg" />
-  <img src="/zh-CN/notes/👋 环境配置/images/keil5/daplink-back.jpg" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/daplink-front.jpg" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/daplink-back.jpg" />
 </div>
 
 <style>
