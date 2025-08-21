@@ -53,8 +53,8 @@ title: Python Opencv 环境配置
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 环境配置/images/opencv/Anaconda-install-4.png" />
-  <img src="/zh-CN/notes/👋 环境配置/images/opencv/Anaconda-install-5.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/opencv/Anaconda-install-4.png" />
+  <img src="/zh-CN/notes/👋 Env Configuration/images/opencv/Anaconda-install-5.png" />
 </div>
 
 <style>
