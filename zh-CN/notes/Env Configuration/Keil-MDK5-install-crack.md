@@ -55,7 +55,7 @@ title: Keil MDK5 安装破解教程
 
 首先你电脑里至少需要一种解压缩软件，如果你不知道的话，请看这个文章
 
-[解压缩软件安装教程](/zh-CN/notes/👋%20Env%20Configuration/7-Zip-install-setup.md)
+[解压缩软件安装教程](/zh-CN/notes/Env%20Configuration/7-Zip-install-setup.md)
 
 安装STM32CubeMX之前需要先安装Java运行时环境。因为STM32CubeMX是使用Java编写的软件，所以需要先装Java
 
@@ -106,8 +106,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-7.png" />
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-8.png" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/keil5-install-7.png" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/keil5-install-8.png" />
 </div>
 
 <style>
@@ -149,8 +149,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-9.png" />
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/keil5-install-10.png" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/keil5-install-9.png" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/keil5-install-10.png" />
 </div>
 
 <style>
@@ -258,8 +258,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/ch340-front.jpg" />
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/ch340-back.jpg" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/ch340-front.jpg" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/ch340-back.jpg" />
 </div>
 
 <style>
@@ -301,7 +301,7 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/stm32f103rct6-front.jpg" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/stm32f103rct6-front.jpg" />
 </div>
 
 <style>
@@ -341,7 +341,7 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/stlinkv2-front.jpg" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/stlinkv2-front.jpg" />
 </div>
 
 <style>
@@ -381,8 +381,8 @@ title: Keil MDK5 安装破解教程
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/daplink-front.jpg" />
-  <img src="/zh-CN/notes/👋 Env Configuration/images/keil5/daplink-back.jpg" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/daplink-front.jpg" />
+  <img src="/zh-CN/notes/Env Configuration/images/keil5/daplink-back.jpg" />
 </div>
 
 <style>

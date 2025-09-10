@@ -8,7 +8,7 @@ tags:
 ## 安装教程
 
 >[!IMPORTANT]
-你可以参考[本文档的教程安装](/zh-CN/notes/👋%20Env%20Configuration/Visual-Studio-Code-setup.md)，也可以参阅[OI Wiki的教程](https://oi.wiki/tools/editor/vscode/)，更加详细一点
+你可以参考[本文档的教程安装](/zh-CN/notes/Env%20Configuration/Visual-Studio-Code-setup.md)，也可以参阅[OI Wiki的教程](https://oi.wiki/tools/editor/vscode/)，更加详细一点
 
 ## 学习资源
 

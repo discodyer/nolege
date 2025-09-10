@@ -11,7 +11,7 @@ title: Python Opencv 环境配置
 阅读本篇文章需要的前置知识
 
 - [文件路径的概念](../🐾%20Basic%20Concepts/file-path.md)
-- [压缩文档的概念](7-Zip%20安装配置.md#压缩文档的概念)
+- [压缩文档的概念](7-Zip-install-setup.md#压缩文档的概念)
 
 ## 安装python，并正确配置和安装环境
 
@@ -24,7 +24,7 @@ title: Python Opencv 环境配置
 
 如果箭头所指的部分和图片中的一样，是英文或数字的话，就没问题
 
-如果是中文的话，请参考[中文用户名conda安装配置方法](/zh-CN/notes/👋%20Env%20Configuration/windows-chinese-username-conda-setup.md)
+如果是中文的话，请参考[中文用户名conda安装配置方法](/zh-CN/notes/Env%20Configuration/windows-chinese-username-conda-setup.md)
 
 :::
 
@@ -53,8 +53,8 @@ title: Python Opencv 环境配置
 <!-- markdownlint-disable -->
 
 <div class="image-preview">
-  <img src="/zh-CN/notes/👋 Env Configuration/images/opencv/Anaconda-install-4.png" />
-  <img src="/zh-CN/notes/👋 Env Configuration/images/opencv/Anaconda-install-5.png" />
+  <img src="/zh-CN/notes/Env Configuration/images/opencv/Anaconda-install-4.png" />
+  <img src="/zh-CN/notes/Env Configuration/images/opencv/Anaconda-install-5.png" />
 </div>
 
 <style>
