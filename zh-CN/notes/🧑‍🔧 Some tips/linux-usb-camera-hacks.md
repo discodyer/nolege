@@ -9,6 +9,7 @@ tags:
 
 当系统中存在多台摄像头时，`/dev/video0` 和 `/dev/video1` 的顺序可能会变化，导致程序无法稳定识别指定摄像头。  
 为了解决这个问题，可以通过 **udev 规则** 创建一个固定的符号链接，例如 `/dev/video_cam`，无论系统如何分配 `videoX`，该链接始终指向同一台物理摄像头。
+
 ## ✅ 方案概述
 
 - 利用 **物理 USB 端口** + **设备序列号** 绑定摄像头  
@@ -34,6 +35,7 @@ E: ATTRS{serial}=EP.20CC54K01
 
 - **`KERNELS=="3-2"`** ：摄像头插在 USB 总线的 3-2 端口
 - **`ATTRS{serial}=="EP.20CC54K01"`** ：摄像头的唯一序列号
+
 ### **2. 编写 udev 规则**
 
 编辑规则文件：
@@ -53,6 +55,7 @@ SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", KERNELS=="3-2", ATTRS{serial}=="EP.
 - `KERNELS=="3-2"` ：匹配物理端口（防止插错口）
 - `ATTRS{serial}=="EP.20CC54K01"` ：匹配设备唯一序列号
 - `SYMLINK+="video_cam"` ：创建 `/dev/video_cam` 符号链接
+
 ### **3. 应用规则**
 
 刷新规则并触发设备：
