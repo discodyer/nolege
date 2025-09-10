@@ -10,13 +10,13 @@ tags:
 当系统中存在多台摄像头时，`/dev/video0` 和 `/dev/video1` 的顺序可能会变化，导致程序无法稳定识别指定摄像头。  
 为了解决这个问题，可以通过 **udev 规则** 创建一个固定的符号链接，例如 `/dev/video_cam`，无论系统如何分配 `videoX`，该链接始终指向同一台物理摄像头。
 
-## ✅ 方案概述
+##  方案概述
 
 - 利用 **物理 USB 端口** + **设备序列号** 绑定摄像头  
 - 创建固定符号链接 `/dev/video_cam`  
 - 不修改系统默认的 `video0`/`video1`，避免冲突  
 
-## ✅ 推荐方案：基于物理 USB 端口 + 序列号匹配
+##  推荐方案：基于物理 USB 端口 + 序列号匹配
 
 ### **1. 获取摄像头信息**
 
@@ -81,9 +81,9 @@ crw-rw----+ 1 root video 81, 1 Aug 31 20:15 /dev/video1
 lrwxrwxrwx 1 root root      6 Aug 31 20:15 /dev/video_cam -> video0
 ```
 
-✅ 不论系统如何分配 `/dev/video0` 或 `/dev/video1`，`/dev/video_cam` 永远指向指定摄像头。
+ 不论系统如何分配 `/dev/video0` 或 `/dev/video1`，`/dev/video_cam` 永远指向指定摄像头。
 
-## **为什么这样更稳？**
+### **5. 注意事项及拓展**
 
 - **物理 USB 端口固定** → `KERNELS=="3-2"`
 - **序列号唯一** → `ATTRS{serial}=="EP.20CC54K01"`
@@ -91,8 +91,6 @@ lrwxrwxrwx 1 root root      6 Aug 31 20:15 /dev/video_cam -> video0
 - **只创建符号链接** → 程序直接访问 `/dev/video_cam`
 > ⚠ **注意**：如果更换了 USB 端口，需要更新规则中的 `KERNELS`。  
 > 可以为每个摄像头设置不同的符号链接，如 `/dev/video_cam_front`、`/dev/video_cam_down`。
-
-### ✅ **扩展**
 
 如果有 **两台摄像头**，可以写两条规则，例如：
 
