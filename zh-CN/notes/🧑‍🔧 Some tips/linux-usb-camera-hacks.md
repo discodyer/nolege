@@ -82,6 +82,7 @@ lrwxrwxrwx 1 root root      6 Aug 31 20:15 /dev/video_cam -> video0
 ```
 
 ✅ 不论系统如何分配 `/dev/video0` 或 `/dev/video1`，`/dev/video_cam` 永远指向指定摄像头。
+
 ## **为什么这样更稳？**
 
 - **物理 USB 端口固定** → `KERNELS=="3-2"`
@@ -90,11 +91,14 @@ lrwxrwxrwx 1 root root      6 Aug 31 20:15 /dev/video_cam -> video0
 - **只创建符号链接** → 程序直接访问 `/dev/video_cam`
 > ⚠ **注意**：如果更换了 USB 端口，需要更新规则中的 `KERNELS`。  
 > 可以为每个摄像头设置不同的符号链接，如 `/dev/video_cam_front`、`/dev/video_cam_down`。
+
 ### ✅ **扩展**
+
 如果有 **两台摄像头**，可以写两条规则，例如：
 
 ```bash
 SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{serial}=="ABC123", SYMLINK+="video_cam_front"
 SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{serial}=="XYZ456", SYMLINK+="video_cam_down"
 ```
+
 这样可以通过固定的设备名在程序中调用，避免 `/dev/video0` 和 `/dev/video1` 混乱的问题。
