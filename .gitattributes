@@ -2,3 +2,10 @@
 *.md linguist-generated=false
 *.md linguist-documentation=false
 *.md linguist-detectable=true
+
+# 强制使用 LF 
+* text=auto eol=lf
+
+# 告诉 git 这种格式是二进制文件，不用修改
+*.png binary
+*.jpg binary

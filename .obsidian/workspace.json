@@ -13,28 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/🤖 AI 人工智能/配置 CUDA 的一万种方法.md",
+                "file": "zh-CN/notes/ROS related/ROS on openEuler/install-ros2-humble-on-oe2403.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "配置 CUDA 的一万种方法"
-            }
-          },
-          {
-            "id": "362e2d5392173459",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.4"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
+              "title": "install-ros2-humble-on-oe2403"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -53,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -65,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "基础设施 AWS",
+                "query": "tag:#ROS2-humble",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -77,16 +65,6 @@
             }
           },
           {
-            "id": "f568bf7e439d398b",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
-            }
-          },
-          {
             "id": "955041b03cbffb02",
             "type": "leaf",
             "state": {
@@ -94,16 +72,6 @@
               "state": {},
               "icon": "lucide-bookmark",
               "title": "书签"
-            }
-          },
-          {
-            "id": "0972447421cfef3d",
-            "type": "leaf",
-            "state": {
-              "type": "recent-files",
-              "state": {},
-              "icon": "clock",
-              "title": "Recent Files"
             }
           }
         ]
@@ -127,7 +95,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "笔记/🤖 AI 人工智能/配置 CUDA 的一万种方法.md",
+                "file": "zh-CN/notes/ROS related/ROS on openEuler/install-ros2-humble-on-oe2403.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -155,21 +123,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "配置 CUDA 的一万种方法 的关系图"
-            }
-          },
-          {
-            "id": "d05b2adb58e8f322",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
+              "title": "install-ros2-humble-on-oe2403 的关系图"
             }
           },
           {
@@ -178,34 +132,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/🤖 AI 人工智能/配置 CUDA 的一万种方法.md"
+                "file": "zh-CN/notes/ROS related/ROS on openEuler/install-ros2-humble-on-oe2403.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "配置 CUDA 的一万种方法 的大纲"
-            }
-          },
-          {
-            "id": "2ac176b8dbb5d7eb",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
-            }
-          },
-          {
-            "id": "85e74261f30e425b",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "SpacedRepIcon",
-              "title": "笔记复习序列"
+              "title": "install-ros2-humble-on-oe2403 的大纲"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       },
       {
         "id": "00f8f8ad2cb9f9b0",
@@ -252,7 +188,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -267,11 +205,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-spaced-repetition:复习卡片": false,
-      "obsidian42-brat:BRAT": false,
-      "markdown-importer:打开 Markdown 格式转换器": false,
-      "random-note:开始漫游笔记": false,
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -280,28 +214,44 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "85e74261f30e425b",
+  "active": "b5dfc4e6c8287ee4",
   "lastOpenFiles": [
-    "笔记/🧩 开源贡献/Kubernetes/CNCF Traval Funding.md",
-    "笔记/🤖 AI 人工智能/配置 CUDA 的一万种方法.md",
-    "笔记/🛠️ 开发/用 CSS 画一本好看的可以交互的 3D 书.md",
-    "node_modules/@vueuse",
-    "node_modules/@antfu",
-    "vite.config.ts.timestamp-1728465284690-0e28b7c319039.mjs",
-    "vite.config.ts.timestamp-1728464096252-aa8904c364146.mjs",
-    "pnpm-lock.yaml.2653060370",
-    "node_modules/@types",
-    "node_modules/@nolebase",
-    "node_modules/@netlify",
-    "node_modules/@iconify-json",
-    "node_modules/@hedgedoc",
-    "笔记/🛠️ 开发/JS Framework Benchmark 命令速查.md",
-    "笔记/🛠️ 开发/Another Custom Directive API in Vue and Vapor.md",
-    "笔记/🛠️ 开发/因为 dayjs 不能轻松导入全部的 i18n 语言而换用了 date-fns.md",
-    "笔记/🛠️ 开发/用兼容性更好，体积更小的 Rive 渲染和播放 Lottie 动画.md",
-    "笔记/📦 收集箱/🐙 GitHub 项目/maplibre/index.md",
-    "编目 Catalog/文章/理解什么是 CRDT.md",
-    "笔记/🪄 Vtuber/在 macOS 上不同的 VTuber 直播方案.md",
+    "zh-CN/notes/ROS related/Micro-XRCE-DDS.md",
+    "zh-CN/notes/ROS related/ROS on openEuler/ros-101-quiz.md",
+    "zh-CN/notes/Drones/ros-fpv-drone-hack.md",
+    "zh-CN/notes/ROS related/ros2-multithread-executor.md",
+    "zh-CN/未命名 5.base",
+    "zh-CN/未命名 4.base",
+    "zh-CN/未命名 3.base",
+    "zh-CN/未命名 2.base",
+    "zh-CN/未命名 1.base",
+    "zh-CN/未命名.base",
+    "zh-CN/🔌 知识库插件列表.md",
+    "zh-CN/notes/ROS related/ROS on openEuler/未命名 14.base",
+    "zh-CN/notes/ROS related/ROS on openEuler/未命名 13.base",
+    "zh-CN/notes/ROS related/ROS on openEuler/未命名 12.base",
+    "zh-CN/notes/ROS related/ROS on openEuler/未命名 11.base",
+    "zh-CN/notes/ROS related/ROS on openEuler/install-ros2-humble-on-oe2403.md",
+    "test01/scripts/turtle_spawner.py.md",
+    "zh-CN/编目 Catalog/index.md",
+    "zh-CN/编目 Catalog/书籍/Example Book.md",
+    "zh-CN/notes/index.md",
+    "zh-CN/notes/Basic Concepts/file-path.md",
+    "zh-CN/notes/Basic Concepts/prerequisite-knowledge.md",
+    "zh-CN/notes/Computer Vision/OpenCV-intro.md",
+    "zh-CN/notes/Drones/Flight Control Basics/Flight-Control-intro.md",
+    "zh-CN/notes/Drones/Flight Control Basics/hardware-keyword-intro.md",
+    "zh-CN/notes/Drones/Flight Control Basics/how-to-design-a-car.md",
+    "zh-CN/notes/Env Configuration/7-Zip-install-setup.md",
+    "zh-CN/notes/Env Configuration/C++-OpenCV-setup.md",
+    "zh-CN/notes/Env Configuration/Git-for-windows-setup.md",
+    "zh-CN/notes/Env Configuration/Keil-MDK5-install-crack.md",
+    "zh-CN/notes/Env Configuration/Python-Opencv-setup.md",
+    "zh-CN/notes/Env Configuration/Visual-Studio-Code-setup.md",
+    "zh-CN/notes/Env Configuration/windows-chinese-username-conda-setup.md",
+    "zh-CN/notes/HomeAssistant/esphome-rca-tv-remote.md",
+    "zh-CN/notes/Learning/point-lio-rvv1-k1.md",
+    "zh-CN/notes/Written in first/images/common-problem/Anaconda-install-6.png",
     "笔记/🪄 Vtuber/assets/Pasted image 20231212122507.png",
     "笔记/🪄 Vtuber/assets/Pasted image 20231212122502.png",
     "笔记/🪄 Vtuber/assets/Pasted image 20231209163759.png",
@@ -311,23 +261,6 @@
     "笔记/🪄 Vtuber/assets/Pasted image 20231208233938.png",
     "笔记/🪄 Vtuber/assets/Pasted image 20231208233927.png",
     "笔记/🪄 Vtuber/assets/Pasted image 20231208233632.png",
-    "笔记/🧱 基础设施/🛜 OpenWRT/assets/Pasted image 20240520003337.png",
-    "笔记/🧱 基础设施/🛜 OpenWRT/从 openclash 迁移到 sing-box.md",
-    "笔记/🧱 基础设施/🚢 Kubernetes/开发一个 Kubernetes Controller.md",
-    "笔记/🧱 基础设施/🚢 Kubernetes/将 TrueNAS 共享存储连接到 K8s 集群.md",
-    "笔记/🧱 基础设施/🚢 Kubernetes/kubectl 速查表.md",
-    "笔记/🧱 基础设施/🚢 Kubernetes/Pod 错误排查之.md",
-    "笔记/🧱 基础设施/云上集群的 GPU.md",
-    "笔记/🧮 数学/空洞的想法.md",
-    "笔记/🧩 开源贡献/Kubernetes/开始之前.md",
-    "笔记/🤖 AI 人工智能/领域/音频/配置和运行 ChatTTS.md",
-    "笔记/🤖 AI 人工智能/领域/音频/在 macOS 上配置 GPT-SoVITS-WebUI.md",
-    "笔记/🤖 AI 人工智能/通过阅读 dlrover 源码学习训练时的自动冗灾恢复和 checkpoint 同步加速.md",
-    "笔记/🤖 AI 人工智能/论文和源码解析：S-LoRA - Serving Thousands of Concurrent LoRA Adapters.md",
-    "笔记/🤖 AI 人工智能/用 FastEdit 微调大模型.md",
-    "笔记/🤖 AI 人工智能/机器学习生态研究报告.md",
-    "笔记/🤖 AI 人工智能/提示工程 Prompt Engineering/最佳实践.md",
-    "笔记/🤖 AI 人工智能/扩散模型是如何工作的？.md",
     "未命名.canvas"
   ]
 }
