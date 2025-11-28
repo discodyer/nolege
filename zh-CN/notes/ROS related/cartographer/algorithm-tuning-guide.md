@@ -121,7 +121,7 @@ TRAJECTORY_BUILDER_nD.imu_gravity_time_constant
 
 ## 局部 SLAM
 
-当从多个测距数据中组装并过滤出扫描数据后，即可进行局部 SLAM 算法运算。局部 SLAM 算法利用**姿态外推器（pose extrapolator）**提供的初始猜测值，通过**扫描匹配（scan matching）**将新的扫描数据插入到当前子地图构建中。
+当从多个测距数据中组装并过滤出扫描数据后，即可进行局部 SLAM 算法运算。局部 SLAM 算法利用 **姿态外推器（pose extrapolator）** 提供的初始猜测值，通过 **扫描匹配（scan matching）** 将新的扫描数据插入到当前子地图构建中。
 
 姿态外推器的基本思想是利用测距仪以外的其他传感器数据来预测下一个扫描数据应该插入到子地图中的位置。
 
