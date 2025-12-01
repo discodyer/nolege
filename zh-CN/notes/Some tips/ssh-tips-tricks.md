@@ -1,5 +1,6 @@
 ---
 title: SSH 的一些奇技淫巧
+comment: true
 ---
 # SSH 的一些奇技淫巧
 

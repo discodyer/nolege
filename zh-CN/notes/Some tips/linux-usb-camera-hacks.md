@@ -3,6 +3,7 @@ tags:
   - tools
   - usb
   - camera
+comment: true
 ---
 
 # Ubuntu 下固定 USB 摄像头设备名称（udev 规则）

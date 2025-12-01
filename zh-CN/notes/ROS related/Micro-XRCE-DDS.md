@@ -7,6 +7,7 @@ tags:
   - Zephyr
   - STM32
   - embedded
+comment: true
 ---
 
 # Micro-XRCE-DDS 相关细节和 ROS2 集成

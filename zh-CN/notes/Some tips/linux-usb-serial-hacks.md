@@ -1,6 +1,7 @@
 ---
 tags:
   - tools
+comment: true
 ---
 
 # Ubuntu下的USB串口使用技巧

@@ -52,6 +52,8 @@ import 'virtual:uno.css'
 import '../styles/main.css'
 import '../styles/vars.css'
 
+import Gitcus from './components/Gitcus'
+
 import('@nolebase/vitepress-plugin-inline-link-preview/client')
 
 const ExtendedTheme: Theme = {
@@ -61,6 +63,7 @@ const ExtendedTheme: Theme = {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       'doc-top': () => [
         h(NolebaseHighlightTargetedHeading),
+        h(Gitcus),
       ],
       'doc-footer-before': () => [
         h(DocFooter),

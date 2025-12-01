@@ -1,6 +1,7 @@
 ---
 tags:
   - tools
+comment: true
 ---
 
 # 在线快捷图片缩小工具

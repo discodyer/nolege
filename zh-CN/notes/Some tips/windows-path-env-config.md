@@ -1,7 +1,6 @@
 ---
 title: windows设置Path环境变量
-url: windows-path-env-config111111
-path: windows-path-env-config111111
+comment: true
 ---
 # windows设置Path环境变量
 
