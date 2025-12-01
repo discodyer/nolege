@@ -24,7 +24,7 @@ Cartographer 提供了多种用于 SLAM 评估的内置工具，特别适合衡�
 
 建议查看 [Cartographer 评估文档](https://google-cartographer.readthedocs.io/en/latest/evaluation.html)，了解评估工具的背景知识及实用指南。
 
-这些工具基于将 SLAM 状态序列化到 `.pbstream` 文件。您可以利用 `cartographer_ros` 中的 `assets_writer` 功能生成此文件。详见[利用 Cartographer ROS 生成的地图](assets-writer.md)。
+这些工具基于将 SLAM 状态序列化到 `.pbstream` 文件。您可以利用 `cartographer_ros` 中的 `assets_writer` 功能生成此文件。详见[利用 Cartographer ROS 生成的地图](ros-assets-writer.md)。
 
 ## 示例：调优局部 SLAM
 
@@ -84,7 +84,7 @@ TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 1e3
 
 在前台运行的局部 SLAM 会直接影响延迟。全局 SLAM 会建立一个后台任务队列。当全局 SLAM 无法处理队列中的任务时，漂移可能无限累积，因此全局 SLAM 需要进行调整以使其能够实时运行。
 
-有许多选项可以调优不同组件的速度，我们按推荐的顺序列出它们，从直接的到更具侵入性的。建议一次只尝试一个选项，从第一个开始。配置参数请参阅 [Cartographer 文档](./official-config-reference.md)中。
+有许多选项可以调优不同组件的速度，我们按推荐的顺序列出它们，从直接的到更具侵入性的。建议一次只尝试一个选项，从第一个开始。配置参数请参阅 [Cartographer 文档](./config-reference.md)中。
 
 #### 降低全局 SLAM 延迟的措施
 
