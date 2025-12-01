@@ -16,37 +16,37 @@ tags:
 
 ## 引言
 
-不幸的是，调优 Cartographer 真的很困难。系统有许多参数，其中许多参数相互影响。本调优指南试图通过具体示例解释一种有原则的方法。
+调优 Cartographer 可能非常复杂。系统参数众多，且多参数间存在相互影响。本调优指南通过具体示例，解释一种有原则的调优思路，帮助您系统性地优化 Cartographer。
 
 ## 内置工具
 
-Cartographer 提供了用于 SLAM 评估的内置工具，这些工具对于测量局部 SLAM 质量特别有用。它们是与核心 `cartographer` 库一起提供的独立可执行文件，因此是独立的，但与 `cartographer_ros` 兼容。
+Cartographer 提供了多种用于 SLAM 评估的内置工具，特别适合衡量局部 SLAM 的精度。它们作为独立的可执行文件，与核心 `cartographer` 库配套，同时兼容 `cartographer_ros`。
 
-因此，请前往 [Cartographer 评估文档](https://google-cartographer.readthedocs.io/en/latest/evaluation.html) 以获取概念概述和实践使用工具的指南。
+建议查看 [Cartographer 评估文档](https://google-cartographer.readthedocs.io/en/latest/evaluation.html)，了解评估工具的背景知识及实用指南。
 
-这些工具假设您已将 SLAM 状态序列化为 `.pbstream` 文件。使用 `cartographer_ros`，您可以调用 `assets_writer` 来序列化状态 - 有关更多信息，请参阅 [利用 Cartographer ROS 生成的地图](assets-writer.md) 部分。
+这些工具基于将 SLAM 状态序列化到 `.pbstream` 文件。您可以利用 `cartographer_ros` 中的 `assets_writer` 功能生成此文件。详见[利用 Cartographer ROS 生成的地图](assets-writer.md)。
 
 ## 示例：调优局部 SLAM
 
-对于此示例，我们将从 `cartographer` 提交 [aba4575](https://github.com/cartographer-project/cartographer/commit/aba4575d937df4c9697f61529200c084f2562584) 和 `cartographer_ros` 提交 [99c23b6](https://github.com/cartographer-project/cartographer_ros/commit/99c23b6ac7874f7974e9ed808ace841da6f2c8b0) 开始，并查看测试数据集中的包 `b2-2016-04-27-12-31-41.bag`。
+本示例基于 `cartographer` 提交 [aba4575](https://github.com/cartographer-project/cartographer/commit/aba4575d937df4c9697f61529200c084f2562584) 和 `cartographer_ros` 提交 [99c23b6](https://github.com/cartographer-project/cartographer_ros/commit/99c23b6ac7874f7974e9ed808ace841da6f2c8b0)，选用测试数据集中的 `b2-2016-04-27-12-31-41.bag` 进行实验。
 
 ### 问题识别
 
-在我们的初始配置中，我们在录制包的早期看到了一些滑动。录制包经过德意志博物馆的一个斜坡，这违反了平坦地板的 2D 假设。激光扫描数据表明，SLAM 系统接收到了相互矛盾的信息。但定位偏差也表明我们过于信任点云匹配，而忽略了其他传感器的数据。我们的目标是通过调优来改善这种情况。
+初始配置的轨迹在录制文件早期出现了一些滑动。录制轨迹经过德意志博物馆一处坡道的时候，违背了 2D SLAM 的平坦地板假设。激光扫描数据表明 SLAM 接收到了冲突信息，定位漂移显示点云匹配的权重过大，从而忽略了其他传感器的信号。我们的目标是通过调优改善这一现象。
 
-如果我们只看这个特定的子图，错误完全限定在一个子图中。我们还看到，随着时间的推移，全局 SLAM 发现异常情况，并部分修正了它。但是损坏的子图永远无法修复。
+我们可以发现，错误仅局限于某一子图内。我们还发现，随着时间的推移，全局 SLAM 检测到异常并进行了部分修正，但受损子图无法完全恢复。
 
-由于这里的问题出现在了子图内的滑动，这是一个局部 SLAM 问题。所以让我们关闭全局 SLAM，以免干扰我们的调优。
+鉴于问题集中在子图内部滑动，本质为局部 SLAM 问题，我们首先禁用全局 SLAM 以避免干扰调优。
 
 ```lua
 POSE_GRAPH.optimize_every_n_nodes = 0
 ```
 
-### 正确的子图大小
+### 子图大小调整
 
-子图的大小通过 `TRAJECTORY_BUILDER_2D.submaps.num_range_data` 配置。查看此示例的各个子图，它们已经很好地满足了这两个约束条件，因此我们认为此参数已经调优良好。
+子图大小由 `TRAJECTORY_BUILDER_2D.submaps.num_range_data` 决定。查看此示例的各个子图，它们已经很好地满足了这两个约束条件，因此我们认为此参数无需调优。
 
-### 调优 CeresScanMatcher
+### CeresScanMatcher 调优
 
 在我们的案例中，扫描匹配器可以自由地前后移动匹配结果，而不会影响得分。我们希望通过增加扫描匹配器偏离先验位置的代价来惩罚这种情况。
 
@@ -72,7 +72,7 @@ TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 1e3
 
 这个设置对于我们想要修复的案例来说更糟，但不再滑动。在提交之前，我们对所有权重进行了归一化，因为它们只有相对意义。这次调优的结果是 [PR 428](https://github.com/cartographer-project/cartographer/pull/428)。
 
-**一般来说，始终尝试为平台调优，而不是为特定的包调优。**
+**建议**：总是针对硬件平台调优，而非针对单个数据包。
 
 ## 特殊情况
 
@@ -86,7 +86,7 @@ TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 1e3
 
 有许多选项可以调优不同组件的速度，我们按推荐的顺序列出它们，从直接的到更具侵入性的。建议一次只尝试一个选项，从第一个开始。配置参数请参阅 [Cartographer 文档](./official-config-reference.md)中。
 
-#### 调优全局 SLAM 以降低延迟
+#### 降低全局 SLAM 延迟的措施
 
 为了优化全局 SLAM 以降低延迟，我们会降低其计算负载，直到它能够持续跟上实时输入。低于此阈值后，我们不再进一步降低计算负载，而是力求达到最佳质量。
 
@@ -103,7 +103,7 @@ TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 1e3
 - 增加 `global_constraint_search_after_n_seconds`
 - 减少 `max_num_iterations`
 
-#### 调优局部 SLAM 以降低延迟
+#### 降低局部 SLAM 延迟的措施
 
 要降低局部 SLAM 延迟，我们可以：
 
@@ -115,11 +115,11 @@ TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 1e3
 
 **注意**：较大的体素会轻微增加扫描匹配分数作为副作用，因此应相应增加分数阈值。
 
-### 给定地图中的纯定位
+### 纯定位模式
 
 纯定位与建图不同。首先，我们期望局部和全局 SLAM 的延迟都更低。其次，全局 SLAM 通常会在作为地图的冻结轨迹和当前轨迹之间找到大量的相互约束。
 
-#### 调优纯定位
+#### 纯定位调优步骤
 
 1. 首先启用 `TRAJECTORY_BUILDER.pure_localization = true`
 2. 大幅降低 `POSE_GRAPH.optimize_every_n_nodes` 以频繁获取结果
@@ -154,7 +154,7 @@ POSE_GRAPH.optimization_problem.odometry_rotation_weight
 - 指向包含您配置的 `cartographer_ros` 分支的链接
 - 指向重现问题的 `.bag` 文件的链接
 
-> **注意**：已经有很多 GitHub 问题，开发人员解决了各种问题。浏览 [cartographer_ros 的已关闭问题](https://github.com/cartographer-project/cartographer_ros/issues?q=is%3Aissue+is%3Aclosed)和 [cartographer 的已关闭问题](https://github.com/cartographer-project/cartographer_ros/issues?q=is%3Aissue+is%3Aclosed)是了解更多关于 Cartographer 的好方法，也许可以找到您问题的解决方案！
+> **提示**：许多问题已被提交并解决。查看 [cartographer_ros 的已关闭 Issues](https://github.com/cartographer-project/cartographer_ros/issues?q=is%3Aissue+is%3Aclosed) 和 [cartographer 的已关闭 Issues](https://github.com/cartographer-project/cartographer_ros/issues?q=is%3Aissue+is%3Aclosed) 可能帮助您快速定位解决方案。
 
 ## 参考资源
 

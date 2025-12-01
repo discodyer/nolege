@@ -43,7 +43,7 @@ Cartographer 可以看作两个独立但相关的子系统。
 
 ### 全局 SLAM（Global SLAM）
 
-另一个子系统是**全局 SLAM**（有时也称为**后端**）。它在后台线程中运行，主要任务是寻找**回环约束（loop closure constraints）**。它通过将**节点（nodes）**中收集的**扫描（scans）**与子图进行扫描匹配来实现这一目标。同时，它还融合其他传感器数据，以获得更高层次的全局视图并确定最一致的全局解决方案。在 3D 模式下，它还会尝试确定重力方向。
+另一个子系统是**全局 SLAM**（有时也称为**后端**）。它在后台线程中运行，主要任务是寻找**回环约束（loop closure constraints）**。它通过将 **节点（nodes）** 中收集的 **扫描（scans）** 与子图进行扫描匹配来实现这一目标。同时，它还融合其他传感器数据，以获得更高层次的全局视图并确定最一致的全局解决方案。在 3D 模式下，它还会尝试确定重力方向。
 
 大多数选项可以在 [pose_graph.lua](https://github.com/cartographer-project/cartographer/blob/df337194e21f98f8c7b0b88dab33f878066d4b56/configuration_files/pose_graph.lua) 中找到。
 
@@ -121,7 +121,7 @@ TRAJECTORY_BUILDER_nD.imu_gravity_time_constant
 
 ## 局部 SLAM
 
-当完成扫描数据的组装和过滤后，即可执行局部 SLAM 算法。局部 SLAM 算法利用**姿态外推器（pose extrapolator）**提供的初始估计值，通过**扫描匹配（scan matching）**将新的扫描数据插入到当前构建的子图中。
+当完成扫描数据的组装和过滤后，即可执行局部 SLAM 算法。局部 SLAM 算法利用 **姿态外推器（pose extrapolator）** 提供的初始估计值，通过 **扫描匹配（scan matching）** 将新的扫描数据插入到当前构建的子图中。
 
 姿态外推器的核心思想是利用测距传感器以外的其他传感器数据，来预测下一个扫描应该插入到子图中的位置。
 
