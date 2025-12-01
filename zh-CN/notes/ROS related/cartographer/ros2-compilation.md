@@ -92,11 +92,11 @@ cat > cartographer.repos << 'EOF'
 repositories:
   cartographer:
     type: git
-    url: https://github.com/cartographer-project/cartographer.git
-    version: master
+    url: https://github.com/ros2/cartographer.git
+    version: ros2
   cartographer_ros:
     type: git
-    url: https://github.com/cartographer-project/cartographer_ros.git
+    url: https://github.com/ros2/cartographer_ros.git
     version: ros2
 EOF
 ```
@@ -128,7 +128,7 @@ rosdep update
 
 ```bash
 cd ~/cartographer_ws
-rosdep install --from-paths src --ignore-src -r -y
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 ```
 
 ### 5. 编译
