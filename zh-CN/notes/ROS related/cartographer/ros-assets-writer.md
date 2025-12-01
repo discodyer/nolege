@@ -10,6 +10,7 @@ tags:
 
 # 利用 Cartographer ROS 生成的地图
 
+> [!NOTE]
 > 本文档翻译自 [Cartographer ROS Assets Writer 官方文档](https://google-cartographer-ros.readthedocs.io/en/latest/assets_writer.html)
 > 
 > Apache License, Version 2.0

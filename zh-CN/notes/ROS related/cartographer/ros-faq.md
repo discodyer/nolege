@@ -10,6 +10,7 @@ tags:
 
 # Cartographer 常见问题解答 (FAQ)
 
+> [!NOTE]
 > 本文档翻译自 [Cartographer ROS - Frequently asked questions](https://google-cartographer-ros.readthedocs.io/en/latest/faq.html)
 > 
 > Apache License, Version 2.0

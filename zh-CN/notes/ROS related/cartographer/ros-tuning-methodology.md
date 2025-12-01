@@ -10,6 +10,7 @@ tags:
 
 # Cartographer 调优方法论
 
+> [!NOTE]
 > 本文档翻译自 [Cartographer ROS - Tuning methodology](https://google-cartographer-ros.readthedocs.io/en/latest/tuning.html)
 > 
 > Apache License, Version 2.0
@@ -154,6 +155,7 @@ POSE_GRAPH.optimization_problem.odometry_rotation_weight
 - 指向包含您配置的 `cartographer_ros` 分支的链接
 - 指向重现问题的 `.bag` 文件的链接
 
+> [!NOTE]
 > **提示**：许多问题已被提交并解决。查看 [cartographer_ros 的已关闭 Issues](https://github.com/cartographer-project/cartographer_ros/issues?q=is%3Aissue+is%3Aclosed) 和 [cartographer 的已关闭 Issues](https://github.com/cartographer-project/cartographer_ros/issues?q=is%3Aissue+is%3Aclosed) 可能帮助您快速定位解决方案。
 
 ## 参考资源

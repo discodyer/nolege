@@ -9,6 +9,7 @@ tags:
 
 # Cartographer 官方配置参数参考
 
+> [!NOTE]
 > 本文档翻译自 [Cartographer 官方配置文档](https://google-cartographer.readthedocs.io/en/latest/configuration.html)
 > 
 > 原文档根据 .proto 文件自动生成

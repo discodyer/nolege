@@ -10,6 +10,7 @@ tags:
 
 # Cartographer ROS Lua 配置参考文档
 
+> [!NOTE]
 > 本文档翻译自 [Cartographer ROS 集成的 Lua 配置参考文档](https://google-cartographer-ros.readthedocs.io/en/latest/configuration.html)
 > 
 > Apache License, Version 2.0

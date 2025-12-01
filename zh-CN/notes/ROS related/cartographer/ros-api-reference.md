@@ -10,6 +10,7 @@ tags:
 
 # Cartographer ROS API 参考文档
 
+> [!NOTE]
 > 本文档翻译自 [Cartographer ROS API 参考文档](https://google-cartographer-ros.readthedocs.io/en/latest/ros_api.html)
 > 
 > Apache License, Version 2.0
