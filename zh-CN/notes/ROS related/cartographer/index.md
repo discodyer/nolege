@@ -19,6 +19,7 @@ comment: true
 ### 入门篇
 
 - **[参数实战调优](parameter-details.md)** - 基于实战经验的参数调优指南，包含传感器配置、前端/后端参数调整、常见问题解决方案。
+- **[ROS2 安装教程](ros2-compilation.md)**
 
 ---
 
@@ -110,6 +111,8 @@ Cartographer 官方文档[🔗链接](https://google-cartographer.readthedocs.io
 - [Cartographer ROS 集成官方文档](https://google-cartographer-ros.readthedocs.io/en/latest/index.html)
 - [Cartographer GitHub](https://github.com/cartographer-project/cartographer)
 - [Cartographer ROS GitHub](https://github.com/cartographer-project/cartographer_ros)
+- [Cartographer GitHub | ROS2](https://github.com/ros2/cartographer)
+- [Cartographer ROS GitHub | ROS2](https://github.com/ros2/cartographer_ros)
 
 ### 社区资源
 - [Cartographer Issues](https://github.com/cartographer-project/cartographer/issues)
