@@ -39,10 +39,10 @@ Cartographer 的 ROS 集成使用 [tf2](http://wiki.ros.org/tf2)，因此所有�
 - 用作发布位姿的子坐标系的 ROS 坐标系 ID。例如，如果系统的其他部分提供了 `"odom"` 坐标系，则可以使用 `"odom"`。在这种情况下，`"odom"` 在 *map_frame* 中的位姿将被发布。否则，将其设置为 `"base_link"` 可能是合适的。
 
 ### odom_frame
-- 仅在 *provide_odom_frame* 为 true 时使用。用于发布（非闭环）局部 SLAM 结果的坐标系，位于 *published_frame* 和 *map_frame* 之间。通常是 `"odom"`。
+- 仅在 *provide_odom_frame* 为 true 时使用。用于发布（非回环）局部 SLAM 结果的坐标系，位于 *published_frame* 和 *map_frame* 之间。通常是 `"odom"`。
 
 ### provide_odom_frame
-- 如果启用，局部的、非闭环的、连续的位姿将作为 *map_frame* 中的 *odom_frame* 发布。
+- 如果启用，局部的、非回环的、连续的位姿将作为 *map_frame* 中的 *odom_frame* 发布。
 
 ### publish_frame_projected_to_2d
 - 如果启用，发布的位姿将被限制为纯 2D 位姿（无横滚、俯仰或 z 偏移）。这可以防止在 2D 模式下由于位姿外推步骤而可能出现的不需要的平面外位姿（例如，如果位姿应作为类似 'base-footprint' 的坐标系发布）。

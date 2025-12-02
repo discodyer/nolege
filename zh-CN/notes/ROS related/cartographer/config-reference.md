@@ -46,13 +46,13 @@ tags:
 - 全局定位可信度阈值，低于此值的全局定位不被信任。
 
 ### double loop_closure_translation_weight
-- 优化问题中用于闭环约束平移分量的权重。
+- 优化问题中用于回环约束平移分量的权重。
 
 ### double loop_closure_rotation_weight
-- 优化问题中用于闭环约束旋转分量的权重。
+- 优化问题中用于回环约束旋转分量的权重。
 
 ### bool log_matches
-- 如果启用，会记录闭环约束的信息用于调试。
+- 如果启用，会记录回环约束的信息用于调试。
 
 ### cartographer.mapping_2d.scan_matching.proto.FastCorrelativeScanMatcherOptions fast_correlative_scan_matcher_options
 - 内部使用的扫描匹配器选项。
@@ -137,16 +137,16 @@ tags:
 - 位姿图选项
 
 ### int32 optimize_every_n_nodes
-- 在线闭环：如果为正值，将在构建地图时运行闭环检测。
+- 在线回环：如果为正值，将在构建地图时运行回环检测。
 
 ### cartographer.mapping.pose_graph.proto.ConstraintBuilderOptions constraint_builder_options
 - 约束构建器选项。
 
 ### double matcher_translation_weight
-- 优化问题中用于非闭环扫描匹配约束平移分量的权重。
+- 优化问题中用于非回环扫描匹配约束平移分量的权重。
 
 ### double matcher_rotation_weight
-- 优化问题中用于非闭环扫描匹配约束旋转分量的权重。
+- 优化问题中用于非回环扫描匹配约束旋转分量的权重。
 
 ### cartographer.mapping.pose_graph.proto.OptimizationProblemOptions optimization_problem_options
 - 优化问题选项。
@@ -161,7 +161,7 @@ tags:
 - 是否输出位姿残差的直方图。
 
 ### double global_constraint_search_after_n_seconds
-- 如果在此选项指定的持续时间内，两条轨迹之间没有添加全局约束，则闭环搜索将在全局范围内执行，而不是在较小的搜索窗口内。
+- 如果在此选项指定的持续时间内，两条轨迹之间没有添加全局约束，则回环搜索将在全局范围内执行，而不是在较小的搜索窗口内。
 
 
 ## cartographer.mapping.proto.TrajectoryBuilderOptions
@@ -205,7 +205,7 @@ tags:
 - 用于计算稀疏点云以进行匹配的体素滤波器。
 
 ### cartographer.sensor.proto.AdaptiveVoxelFilterOptions loop_closure_adaptive_voxel_filter_options
-- 用于计算稀疏点云以查找闭环的体素滤波器。
+- 用于计算稀疏点云以查找回环的体素滤波器。
 
 ### bool use_online_correlative_scan_matching
 - 是否首先使用相关扫描匹配器求解在线扫描匹配，为 Ceres 生成一个良好的起点。
@@ -370,7 +370,7 @@ tags:
 - 子图选项（3D）
 
 ### double high_resolution
-- 用于局部 SLAM 和闭环的 'high_resolution' 地图分辨率（单位：米）。
+- 用于局部 SLAM 和回环的 'high_resolution' 地图分辨率（单位：米）。
 
 ### double high_resolution_max_range
 - 插入 'high_resolution' 地图之前过滤点云的最大范围。

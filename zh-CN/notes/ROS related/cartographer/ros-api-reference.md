@@ -89,7 +89,7 @@ tags:
 
 除非参数 `publish_to_tf` 设置为 `false`，否则将提供配置的 *map_frame* 和 *published_frame* 之间的变换。
 
-如果配置中启用了 *provide_odom_frame*，还将提供配置的 *odom_frame* 和 *published_frame* 之间的连续（即不受闭环影响）变换。
+如果配置中启用了 *provide_odom_frame*，还将提供配置的 *odom_frame* 和 *published_frame* 之间的连续（即不受回环影响）变换。
 
 ## 离线节点 (Offline Node)
 

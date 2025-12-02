@@ -138,7 +138,7 @@ TRAJECTORY_BUILDER_nD.imu_gravity_time_constant
 
 #### 2. 实时相关扫描匹配器（RealTimeCorrelativeScanMatcher）
 
-如果您没有其他传感器或不信任它们，可以启用 `RealTimeCorrelativeScanMatcher`。它使用类似于闭环分析中扫描与子图匹配的方法（稍后会详细介绍），但是它匹配的是当前子图。然后将最佳匹配结果用作 `CeresScanMatcher` 的先验信息。
+如果您没有其他传感器或不信任它们，可以启用 `RealTimeCorrelativeScanMatcher`。它使用类似于回环分析中扫描与子图匹配的方法（稍后会详细介绍），但是它匹配的是当前子图。然后将最佳匹配结果用作 `CeresScanMatcher` 的先验信息。
 
 这个扫描匹配器开销很大，基本上会覆盖除测距仪之外的其他传感器的任何信号，但它在特征丰富的环境中很稳健。
 
@@ -204,7 +204,7 @@ TRAJECTORY_BUILDER_nD.motion_filter.max_angle_radians
 
 当局部 SLAM 接收到给定数量的距离数据时，子图被认为是完整的。
 
-局部 SLAM 会随时间产生漂移，全局 SLAM 用于修正这种漂移。子图必须足够小，以确保其内部的漂移低于分辨率阈值，从而保证局部精度。另一方面，子图又必须足够大，以确保它们之间相互独立，从而使闭环检测机制能够正常工作。
+局部 SLAM 会随时间产生漂移，全局 SLAM 用于修正这种漂移。子图必须足够小，以确保其内部的漂移低于分辨率阈值，从而保证局部精度。另一方面，子图又必须足够大，以确保它们之间相互独立，从而使回环检测机制能够正常工作。
 
 ```lua
 TRAJECTORY_BUILDER_nD.submaps.num_range_data
@@ -284,9 +284,9 @@ POSE_GRAPH.optimize_every_n_nodes
 
 非全局约束（也称为子图内约束）在轨迹上紧密相邻的节点之间自动构建。直观地说，这些"*非全局绳索*"保持了轨迹局部结构的连贯性。
 
-#### 全局约束（闭环约束）
+#### 全局约束（回环约束）
 
-全局约束（也称为闭环约束或子图间约束）定期在新子图和被认为在空间上"足够接近"（**搜索窗口**的一部分）且匹配度高（运行扫描匹配时的良好匹配）的节点之间进行常规搜索。
+全局约束（也称为回环约束或子图间约束）定期在新子图和被认为在空间上"足够接近"（**搜索窗口**的一部分）且匹配度高（运行扫描匹配时的良好匹配）的节点之间进行常规搜索。
 
 直观地说，这些"*全局绳索*"在结构中引入"*结*"并牢固地将两股拉近。
 
@@ -298,13 +298,13 @@ POSE_GRAPH.fast_correlative_scan_matcher_3d.linear_z_search_window
 POSE_GRAPH.fast_correlative_scan_matcher*.angular_search_window
 ```
 
-> **注意：** 实际上，全局约束可以做的不仅仅是在单个轨迹上找到闭环。它还可以对齐由多个机器人记录的不同轨迹，但本文将不讨论这种用法以及与"全局定位"相关的参数。
+> **注意：** 实际上，全局约束可以做的不仅仅是在单个轨迹上找到回环。它还可以对齐由多个机器人记录的不同轨迹，但本文将不讨论这种用法以及与"全局定位"相关的参数。
 
 ### 采样率
 
 为了限制约束数量（和计算量），Cartographer 仅考虑所有近距离节点的下采样集合来构建约束。这由一个采样率常数控制。
 
-采样节点太少可能导致错过约束和无效的闭环。采样节点太多会减慢全局 SLAM 并阻止实时闭环。
+采样节点太少可能导致错过约束和无效的回环。采样节点太多会减慢全局 SLAM 并阻止实时回环。
 
 ```lua
 POSE_GRAPH.constraint_builder.sampling_ratio
@@ -312,7 +312,7 @@ POSE_GRAPH.constraint_builder.sampling_ratio
 
 ### 快速相关扫描匹配器
 
-当考虑将节点和子图用于约束构建时，它们会先经过一个称为 `FastCorrelativeScanMatcher` 的扫描匹配器。该扫描匹配器专门为 Cartographer 设计，使实时闭环扫描匹配成为可能。
+当考虑将节点和子图用于约束构建时，它们会先经过一个称为 `FastCorrelativeScanMatcher` 的扫描匹配器。该扫描匹配器专门为 Cartographer 设计，使实时回环扫描匹配成为可能。
 
 `FastCorrelativeScanMatcher` 依赖于"*分支定界*"机制在不同的栅格分辨率下工作，并能有效地消除错误匹配。该机制在本文档前面介绍的 Cartographer 论文中有详细介绍。它基于深度可控的探索树运行。
 

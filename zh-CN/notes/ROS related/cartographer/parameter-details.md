@@ -359,7 +359,7 @@ POSE_GRAPH.global_sampling_ratio = 0
 
 **纯定位模式：**
 - 推荐值：`5-10`
-- 需要快速响应闭环
+- 需要快速响应回环
 
 **调试模式：**
 - 设置为 `0` 关闭后端优化
@@ -398,7 +398,7 @@ POSE_GRAPH.fast_correlative_scan_matcher.angular_search_window
 
 **性能优化：**
 - 减小搜索窗口可以提升速度
-- 但可能错过闭环机会
+- 但可能错过回环机会
 - 根据场景大小调整
 
 ### 6.3 优化问题权重
@@ -433,7 +433,7 @@ POSE_GRAPH.optimization_problem.local_slam_pose_rotation_weight
 - 3D 推荐：`5e1`
 - 值越大，异常值影响越大
 
-### 6.4 闭环检测参数
+### 6.4 回环检测参数
 
 **参数：**
 ```lua
@@ -445,15 +445,15 @@ POSE_GRAPH.constraint_builder.loop_closure_rotation_weight
 **调参策略：**
 
 **匹配分数阈值：**
-- `min_score`：闭环检测的最小匹配分数
+- `min_score`：回环检测的最小匹配分数
 - 2D 推荐：`0.55`
 - 3D 推荐：`0.55`
-- 提高可以减少误匹配，但可能错过真实闭环
+- 提高可以减少误匹配，但可能错过真实回环
 
-**闭环约束权重：**
+**回环约束权重：**
 - `loop_closure_translation_weight = 1.1e4`
 - `loop_closure_rotation_weight = 1e5`
-- 调大会增强闭环约束的作用
+- 调大会增强回环约束的作用
 
 ## 7. 3D SLAM 特殊考虑
 
@@ -528,7 +528,7 @@ TRAJECTORY_BUILDER_3D.ceres_scan_matcher.rotation_weight = 4e2
 | `optimize_every_n_nodes` | 30-60 | 90 | 5-10 | 优化频率 |
 | `constraint_builder.sampling_ratio` | 0.3 | 0.3 | 0.01 | 约束采样率 |
 | `global_sampling_ratio` | 0.003 | 0.003 | 0.0001 | 全局采样率 |
-| `constraint_builder.min_score` | 0.55 | 0.65 | 0.55 | 闭环检测分数阈值 |
+| `constraint_builder.min_score` | 0.55 | 0.65 | 0.55 | 回环检测分数阈值 |
 | `constraint_builder.max_constraint_distance` | 15 | 15 | 15 | 约束最大距离（米） |
 | `max_num_final_iterations` | 200 | 400 | 200 | 最终优化迭代次数 |
 
@@ -594,7 +594,7 @@ max_num_final_iterations = 更大的值
 - 重新打开后端
 - 设置优化频率
 - 调整约束构建参数
-- 配置闭环检测参数
+- 配置回环检测参数
 
 **步骤 5：迭代测试与验证**
 - 录制测试包
@@ -616,7 +616,7 @@ max_num_final_iterations = 更大的值
 
 #### 3. 关注关键指标
 - 地图一致性
-- 闭环成功率
+- 回环成功率
 - 计算延迟
 - 内存占用
 
@@ -697,7 +697,7 @@ max_num_final_iterations = 更大的值
 
 **症状：**
 - 建图过程中地图逐渐偏移
-- 闭环时无法正确匹配
+- 回环时无法正确匹配
 - 整体地图扭曲
 
 **原因：**
@@ -727,7 +727,7 @@ max_num_final_iterations = 更大的值
    optimize_every_n_nodes = 30
    ```
 
-### 10.4 闭环检测失败
+### 10.4 回环检测失败
 
 **症状：**
 - 回到起点时无法识别
@@ -735,7 +735,7 @@ max_num_final_iterations = 更大的值
 - 地图存在明显重复
 
 **原因：**
-- 闭环检测阈值过高
+- 回环检测阈值过高
 - 搜索窗口过小
 - 采样率过低
 
