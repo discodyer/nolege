@@ -104,6 +104,10 @@ Cartographer 官方文档[🔗链接](https://google-cartographer.readthedocs.io
 
 - **[官方配置参数参考](config-reference.md)** - 完整的 Cartographer 核心算法参数列表，包括 2D/3D SLAM 所有配置选项。
 
+### Cartographer 相关论文翻译
+
+- [Real-Time Loop Closure in 2D LIDAR SLAM](hess2016.md) - 2D 激光雷达 SLAM 中的实时回环检测
+
 ## 🔗 相关资源
 
 ### 官方资源
