@@ -13,7 +13,7 @@ comment: true
 > [!WARNING]
 > 当您想要运行 cartographer_ros 时，可能需要先通过运行 `source install_isolated/setup.bash` 来配置 ROS 环境（如果您的 shell 是 zsh，请将 bash 替换为 zsh）
 
-## 验证您的 bag
+## 验证您的 bag {#verify-bag}
 
 Cartographer ROS 提供了一个名为 `cartographer_rosbag_validate` 的工具，用于自动分析 bag 中存在的数据。
 在尝试为不正确的数据调整 Cartographer 之前运行此工具通常是个好主意。
@@ -31,7 +31,7 @@ Cartographer ROS 提供了一个名为 `cartographer_rosbag_validate` 的工具�
 cartographer_rosbag_validate -bag_filename your_bag.bag
 ```
 
-## 创建 .lua 配置文件
+## 创建 .lua 配置文件 {#create-lua}
 
 Cartographer 非常灵活，可以配置为在各种机器人上工作。
 机器人配置从 `options` 数据结构中读取，该结构必须通过 Lua 脚本定义。
@@ -83,7 +83,7 @@ cp install_isolated/share/cartographer_ros/configuration_files/backpack_2d.lua i
 如果您遵循 `cartographer_rosbag_validate` 的建议，每次扫描使用 100 条 ROS 消息，则可以将此变量设置为 100。
 如果您有两个测距传感器（例如两个 LIDAR）同时提供完整扫描，则应将此变量设置为 2。
 
-## 为您的 SLAM 场景创建 .launch 文件
+## 为您的 SLAM 场景创建 .launch 文件 {#create-launch}
 
 您可能已经注意到，上一节介绍的每个演示都是使用不同的 roslaunch 命令运行的。
 Cartographer 的推荐用法确实是为每个机器人和 SLAM 类型提供自定义 `.launch` 文件。
@@ -118,7 +118,7 @@ cp install_isolated/share/cartographer_ros/launch/assets_writer_backpack_3d.laun
 > - 如果您只使用一个 `sensor_msgs/MultiEchoLaserScan` 主题，预期命名为 `echoes`。如果有多个，应命名为 `echoes_1`、`echoes_2` 等...
 > - 如果您只使用一个 `sensor_msgs/PointCloud2` 主题，预期命名为 `points2`。如果有多个，应命名为 `points2_1`、`points2_2` 等...
 
-## 测试您的配置
+## 测试您的配置 {#test-config}
 
 一切都设置好了！现在您可以使用以下命令启动 Cartographer：
 

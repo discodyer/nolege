@@ -15,7 +15,7 @@ tags:
 > 
 > Apache License, Version 2.0
 
-## Cartographer 节点 (Cartographer Node)
+## Cartographer 节点 (Cartographer Node) {#cartographer-node}
 
 [cartographer_node](https://github.com/cartographer-project/cartographer_ros/blob/master/cartographer_ros/cartographer_ros/node_main.cc) 是用于在线实时 SLAM 的节点。
 
@@ -91,7 +91,7 @@ tags:
 
 如果配置中启用了 *provide_odom_frame*，还将提供配置的 *odom_frame* 和 *published_frame* 之间的连续（即不受回环影响）变换。
 
-## 离线节点 (Offline Node)
+## 离线节点 (Offline Node) {#offline-node}
 
 [offline_node](https://github.com/cartographer-project/cartographer_ros/blob/master/cartographer_ros/cartographer_ros/offline_node_main.cc) 是对传感器数据包进行 SLAM 处理的最快方式。它不监听任何话题，而是从命令行提供的一组包中读取 TF 和传感器数据。它还会发布一个随传感器数据前进的时钟，即替代 `rosbag play`。在所有其他方面，它的行为类似于 `cartographer_node`。每个包将成为最终状态中的单独轨迹。完成处理所有数据后，它会写出最终的 Cartographer 状态并退出。
 
@@ -107,7 +107,7 @@ tags:
 #### ~bagfile_progress_pub_interval (double, 默认值=10.0)
 发布包文件处理进度的间隔（单位：秒）。
 
-## 占用栅格节点 (Occupancy Grid Node)
+## 占用栅格节点 (Occupancy Grid Node) {#occupancy-grid-node}
 
 [occupancy_grid_node](https://github.com/cartographer-project/cartographer_ros/blob/master/cartographer_ros/cartographer_ros/occupancy_grid_node_main.cc) 监听 SLAM 发布的子图，从中构建 ROS 占用栅格并发布它。这个工具对于保持需要单一整体地图的旧节点工作很有用，直到新的导航栈可以直接处理 Cartographer 的子图。生成地图的开销很大且速度较慢，因此地图更新的时间间隔以秒为单位。您可以使用命令行选项选择性地包含/排除来自冻结（静态）或活动轨迹的子图。使用 `--help` 标志调用节点可查看这些选项。
 
@@ -120,7 +120,7 @@ tags:
 #### map ([nav_msgs/OccupancyGrid](http://docs.ros.org/api/nav_msgs/html/msg/OccupancyGrid.html))
 如果有订阅者，节点将持续计算并发布地图。更新之间的时间将随着地图大小的增加而增加。对于更快的更新，请使用子图 API。
 
-## Pbstream 地图发布节点 (Pbstream Map Publisher Node)
+## Pbstream 地图发布节点 (Pbstream Map Publisher Node) {#pbstream-publisher}
 
 [pbstream_map_publisher](https://github.com/cartographer-project/cartographer_ros/blob/master/cartographer_ros/cartographer_ros/pbstream_map_publisher_main.cc) 是一个简单的节点，从序列化的 Cartographer 状态（pbstream 格式）创建静态占用栅格。如果不需要实时更新，这是占用栅格节点的高效替代方案。
 

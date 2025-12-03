@@ -40,7 +40,7 @@ Assets Writer 需要以下输入：
 
 Assets Writer 使用 `.pbstream` 中找到的轨迹批量处理 `.bag` 数据。管道可用于对 SLAM 点云数据进行着色、过滤并导出为各种格式。有多个这样的点处理步骤可以在管道中交错使用 - [cartographer/io](https://github.com/cartographer-project/cartographer/tree/f1ac8967297965b8eb6f2f4b08a538e052b5a75b/cartographer/io) 中已经提供了几个。
 
-## 使用示例
+## 使用示例 {#usage-example}
 
 ### 离线节点自动保存
 
@@ -78,7 +78,7 @@ roslaunch cartographer_ros assets_writer_backpack_3d.launch \
 
 所有输出文件都以 `--output_file_prefix` 为前缀，默认为第一个 bag 的文件名。对于上一个示例，如果您在管道配置文件中指定 `points.ply`，这将转换为 `${HOME}/Downloads/b3-2016-04-05-14-14-00.bag_points.ply`。
 
-## 配置
+## 配置 {#configuration}
 
 Assets Writer 被建模为 [PointsProcessor](https://github.com/cartographer-project/cartographer/blob/30f7de1a325d6604c780f2f74d9a345ec369d12d/cartographer/io/points_processor.h) 步骤的管道。[PointsBatch](https://github.com/cartographer-project/cartographer/blob/30f7de1a325d6604c780f2f74d9a345ec369d12d/cartographer/io/points_batch.h) 数据流经每个处理器，它们都有机会在传递之前修改 `PointsBatch`。
 
@@ -127,7 +127,7 @@ Assets Writer 被建模为 [PointsProcessor](https://github.com/cartographer-pro
 ### write_xyz
 写入 ASCII xyz 点。
 
-## 点云的第一人称可视化
+## 点云的第一人称可视化 {#pointcloud-viz}
 
 两个 `PointsProcessor` 特别有趣：`pcd_writing` 和 `ply_writing` 可以将点云保存为 `.pcd` 或 `.ply` 文件格式。然后，这些文件格式可以由专用软件（如 [point_cloud_viewer](https://github.com/cartographer-project/point_cloud_viewer) 或 [meshlab](http://www.meshlab.net/)）使用，以浏览高分辨率地图。
 

@@ -14,7 +14,7 @@ comment: true
 > [!WARNING]
 > 当您想要运行 cartographer_ros 时，可能需要先通过运行 `source install_isolated/setup.bash` 来配置 ROS 环境（如果您的 shell 是 zsh，请将 bash 替换为 zsh）
 
-## 德意志博物馆
+## 德意志博物馆 {#deutsches-museum}
 
 下载并启动 2D bag 演示：
 
@@ -30,7 +30,7 @@ wget -P ~/Downloads https://storage.googleapis.com/cartographer-public-data/bags
 roslaunch cartographer_ros demo_backpack_3d.launch bag_filename:=${HOME}/Downloads/b3-2016-04-05-14-14-00.bag
 ```
 
-## 纯定位
+## 纯定位 {#pure-localization}
 
 纯定位使用 2 个不同的 bag 文件。第一个用于生成地图，第二个用于运行纯定位。
 
@@ -66,7 +66,7 @@ roslaunch cartographer_ros demo_backpack_3d_localization.launch \
    bag_filename:=${HOME}/Downloads/b3-2016-04-05-15-52-20.bag
 ```
 
-## 静态地标
+## 静态地标 {#static-landmarks}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E2-OD-ycivc" frameborder="0" allowfullscreen></iframe>
 

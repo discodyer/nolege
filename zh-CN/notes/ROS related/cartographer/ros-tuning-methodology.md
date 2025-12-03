@@ -19,7 +19,7 @@ tags:
 
 调优 Cartographer 可能非常复杂。系统参数众多，且多参数间存在相互影响。本调优指南通过具体示例，解释一种有原则的调优思路，帮助您系统性地优化 Cartographer。
 
-## 内置工具
+## 内置工具 {#builtin-tools}
 
 Cartographer 提供了多种用于 SLAM 评估的内置工具，特别适合衡量局部 SLAM 的精度。它们作为独立的可执行文件，与核心 `cartographer` 库配套，同时兼容 `cartographer_ros`。
 
@@ -27,7 +27,7 @@ Cartographer 提供了多种用于 SLAM 评估的内置工具，特别适合衡�
 
 这些工具基于将 SLAM 状态序列化到 `.pbstream` 文件。您可以利用 `cartographer_ros` 中的 `assets_writer` 功能生成此文件。详见[利用 Cartographer ROS 生成的地图](ros-assets-writer.md)。
 
-## 示例：调优局部 SLAM
+## 示例：调优局部 SLAM {#tune-local-slam}
 
 本示例基于 `cartographer` 提交 [aba4575](https://github.com/cartographer-project/cartographer/commit/aba4575d937df4c9697f61529200c084f2562584) 和 `cartographer_ros` 提交 [99c23b6](https://github.com/cartographer-project/cartographer_ros/commit/99c23b6ac7874f7974e9ed808ace841da6f2c8b0)，选用测试数据集中的 `b2-2016-04-27-12-31-41.bag` 进行实验。
 
@@ -75,7 +75,7 @@ TRAJECTORY_BUILDER_2D.ceres_scan_matcher.translation_weight = 1e3
 
 **建议**：总是针对硬件平台调优，而非针对单个数据包。
 
-## 特殊情况
+## 特殊情况 {#edge-cases}
 
 默认配置和上述调优步骤侧重于质量。只有在实现良好质量之后，我们才能进一步考虑特殊情况。
 
@@ -147,7 +147,7 @@ POSE_GRAPH.optimization_problem.odometry_rotation_weight
 
 然而，来自轮式编码器的里程计通常在旋转方面具有较高的不确定性。在这种情况下，可以减少旋转权重，甚至可以降低到零。
 
-## 仍然有问题？
+## 仍然有问题？ {#still-issues}
 
 如果您无法让 Cartographer 在您的数据上可靠地工作，可以开一个 [GitHub issue](https://github.com/cartographer-project/cartographer_ros/issues) 寻求帮助。开发人员很乐意提供帮助，但只有在您遵循[问题模板](https://github.com/cartographer-project/cartographer_ros/issues/new?labels=question)时才能提供帮助，该模板包含：
 

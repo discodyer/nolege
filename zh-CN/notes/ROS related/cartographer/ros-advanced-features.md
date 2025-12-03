@@ -18,7 +18,7 @@ tags:
 
 Cartographer 不仅是一个出色的 SLAM 算法，它还附带了一个功能齐全的实现，提供了许多"额外"功能。本页列出了一些不太为人所知的功能。
 
-## 更多输入源
+## 更多输入源 {#multi-sensors}
 
 ### 里程计输入
 
@@ -46,7 +46,7 @@ use_nav_sat = true
 use_landmarks = true
 ```
 
-## 纯定位模式
+## 纯定位模式 {#localization-mode}
 
 如果您已经有了满意的地图并希望减少计算量，可以使用 Cartographer 的纯定位模式，该模式将针对现有地图运行 SLAM，而不会构建新地图。
 
@@ -60,7 +60,7 @@ TRAJECTORY_BUILDER.pure_localization_trimmer = {
 }
 ```
 
-## IMU 标定
+## IMU 标定 {#imu-calibration}
 
 在执行全局优化时，Ceres 会尝试改进 IMU 和测距传感器之间的位姿。
 
@@ -68,7 +68,7 @@ TRAJECTORY_BUILDER.pure_localization_trimmer = {
 
 然后，您可以将 Cartographer 用作校准过程的一部分，以提高机器人外参标定的质量。
 
-## 多轨迹 SLAM
+## 多轨迹 SLAM {#multi-trajectory}
 
 Cartographer 可以从多个并行发射数据的机器人执行 SLAM。
 
@@ -82,7 +82,7 @@ Cartographer 可以从多个并行发射数据的机器人执行 SLAM。
 - 分布式 SLAM
 - 大规模环境建图
 
-## 使用 gRPC 的云集成
+## 使用 gRPC 的云集成 {#grpc-integration}
 
 Cartographer 围绕 Protobuf 消息构建，这使其非常灵活和可互操作。
 

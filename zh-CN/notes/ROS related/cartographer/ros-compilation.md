@@ -8,7 +8,7 @@ comment: true
 
 # 编译 Cartographer ROS
 
-## 系统要求
+## 系统要求 {#sys-requirements}
 
 Cartographer ROS 的系统要求与 [Cartographer 的要求](https://google-cartographer.readthedocs.io/en/latest/#system-requirements)相同。
 
@@ -17,7 +17,7 @@ Cartographer ROS 的系统要求与 [Cartographer 的要求](https://google-cart
 * Melodic
 * Noetic
 
-## 构建与安装
+## 构建与安装 {#build-install}
 
 为了构建 Cartographer ROS，我们推荐使用 [wstool](http://wiki.ros.org/wstool) 和 [rosdep](http://wiki.ros.org/rosdep)。为了加快构建速度，我们还推荐使用 [Ninja](https://ninja-build.org)。
 

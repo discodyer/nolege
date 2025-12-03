@@ -26,7 +26,7 @@ W. Hess, D. Kohler, H. Rapp, and D. Andor,
 *Robotics and Automation (ICRA), 2016 IEEE International Conference on*.
 IEEE, 2016. pp. 1271–1278.
 
-## 系统概述
+## 系统概述 {#system-overview}
 
 ![系统架构图](https://raw.githubusercontent.com/cartographer-project/cartographer/master/docs/source/high_level_system_overview.png)
 
@@ -52,7 +52,7 @@ Cartographer 可以看作两个独立但相关的子系统。
 
 从更高的抽象层次来看，**局部 SLAM 的工作是生成良好的子图**，**全局 SLAM 的工作是以最一致的方式将它们连接在一起**。
 
-## 输入数据处理
+## 输入数据处理 {#input-processing}
 
 ### 测距传感器数据过滤
 
@@ -120,7 +120,7 @@ TRAJECTORY_BUILDER_nD.imu_gravity_time_constant
 
 > **注意：** 在 Cartographer 配置文件中，所有时间值都以秒为单位定义
 
-## 局部 SLAM
+## 局部 SLAM {#local-slam}
 
 当完成扫描数据的组装和过滤后，即可执行局部 SLAM 算法。局部 SLAM 算法利用 **姿态外推器（pose extrapolator）** 提供的初始估计值，通过 **扫描匹配（scan matching）** 将新的扫描数据插入到当前构建的子图中。
 
@@ -254,7 +254,7 @@ TRAJECTORY_BUILDER_3D.low_resolution_adaptive_voxel_filter.max_range
 
 **TODO**: *记录 TSDF 配置*
 
-## 全局 SLAM
+## 全局 SLAM {#global-slam}
 
 当局部 SLAM 生成子图序列时，全局优化任务（通常称为"*优化问题*"或"*稀疏位姿调整*"）会在后台线程中运行。其作用是重新排列各个子图，使它们形成一个连贯一致的全局地图。
 
