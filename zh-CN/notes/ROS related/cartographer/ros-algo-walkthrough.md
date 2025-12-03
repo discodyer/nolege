@@ -28,7 +28,7 @@ IEEE, 2016. pp. 1271–1278.
 
 ## 系统概述 {#system-overview}
 
-![系统架构图](https://raw.githubusercontent.com/cartographer-project/cartographer/master/docs/source/high_level_system_overview.png)
+![系统架构图](images/high_level_system_overview.webp)
 
 Cartographer 可以看作两个独立但相关的子系统。
 
