@@ -384,5 +384,6 @@ POSE_GRAPH.max_num_final_iterations
 ## 参考资源
 
 - [Cartographer 论文](https://research.google.com/pubs/pub45466.html)
+- [Cartographer 论文翻译](hess2016.md)
 - [Ceres Solver](http://ceres-solver.org/)
 - [配置文件示例](https://github.com/cartographer-project/cartographer/tree/master/configuration_files)
