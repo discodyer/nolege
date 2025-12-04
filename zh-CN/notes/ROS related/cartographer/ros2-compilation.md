@@ -223,9 +223,10 @@ def generate_launch_description():
 
 安装完成后，您可以：
 
-1. 阅读 [Cartographer 配置参考](./config-reference.md) 了解如何配置参数
-2. 查看 [在示例 bag 上运行 Cartographer](./ros-run-demo-bag.md) 学习基本使用
-3. 参考 [在您自己的 bag 上运行 Cartographer](./ros-run-your-bag.md) 适配您的机器人
+1. 阅读 [参数实战调优](parameter-details.md) - 基于实战经验的参数调优指南，包含传感器配置、前端/后端参数调整、常见问题解决方案。
+2. 查看 [在演示包上运行 Cartographer ROS](ros-run-demo-bag.md) - 学习基本使用
+3. 参考 [算法调优指南](ros-algo-walkthrough.md) - 深入讲解 Cartographer 的系统架构、局部/全局 SLAM 原理、扫描匹配和优化机制。
+4. 参考 [调优方法论](ros-tuning-methodology.md) - 系统化的调优方法，通过实际案例讲解如何调优局部 SLAM、降低延迟、配置纯定位模式。
 
 ## 参考资料
 
