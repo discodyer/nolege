@@ -13,12 +13,14 @@ comment: true
 欢迎来到 Cartographer 中文文档库！本文档库提供了完整的 Cartographer SLAM 算法学习资料，包含官方文档翻译和实战调优指南。
 
 本文档库包含系统化的 Cartographer 文档，涵盖从入门到精通的全部内容。由于网上的资料非常零散，并且良莠不齐，所以就有了现在这个文档库。所有参考的文章链接都会放在文档最后。
+如果您觉得内容有帮助，或是有任何疑问、建议，欢迎随时在底部评论区留言互动。
 
 ## 📖 完整文档列表
 
 ### 入门篇
 
 - **[ROS2 安装 Cartographer 教程 ](ros2-compilation.md)** - 包含了从 APT 源和从源码编译的教程
+- **[ROS2 下录制和回放 Bag 包教程](ros2-record-bag.md)** - 指导你如何在 ROS2 环境中录制 bag 包，这些数据将用于调试 Cartographer SLAM 算法。
 - **[参数实战调优](parameter-details.md)** - 基于实战经验的参数调优指南，包含传感器配置、前端/后端参数调整、常见问题解决方案。
 
 ---
