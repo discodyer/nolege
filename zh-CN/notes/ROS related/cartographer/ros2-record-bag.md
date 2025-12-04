@@ -9,7 +9,7 @@ comment: true
 
 ## 概述
 
-本教程将指导你如何在 ROS2 环境中录制 bag 包，这些数据将用于调试 Cartographer SLAM 算法。我们将涵盖必要的传感器数据、录制技巧以及优化建议。
+本教程将指导你如何在 ROS2 环境中录制 bag 包，这些数据将用于调试 Cartographer SLAM 算法。
 
 ## 前提条件
 
@@ -76,6 +76,21 @@ ros2 bag record -o cartographer_$(date +%y-%m-%d-%H-%M-%S) /scan /imu
 ros2 bag play cartographer_debug
 ```
 
+## 断网后录制被中断
+
+有些时候小车会开出WiFi的信号范围，这时候录制的bag会被中断，我们可以设置 `ROS_LOCALHOST_ONLY` 环境变量来将ROS2通信限制在本地主机，这样你的ROS2系统及其话题、服务和操作都将对本地网络上的其他计算机不可见。在有多个机器人的场景下也非常有用，可以避免多个机器人向同一个话题发布消息，从而导致异常行为。你可以使用以下命令设置此环境变量。
+
+```bash
+export ROS_LOCALHOST_ONLY=1
+```
+
+或者将其写入`.bashrc`
+
+```bash
+echo "export ROS_LOCALHOST_ONLY=1" >> ~/.bashrc
+```
+
 ## 参考资料
 
 - [Recording and playing back data](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
+- [Configuring environment](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html)
