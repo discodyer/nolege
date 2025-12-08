@@ -124,8 +124,20 @@ Cartographer 接收的传感器数据主要有三种：
 
 **参数：** `num_subdivisions_per_laser_scan` 和 `num_accumulated_range_data`
 
-- `num_subdivisions_per_laser_scan`：将一帧点云切成 N 份，然后均匀估算每一份的时间戳（默认值：10）
-- `num_accumulated_range_data`：将 N 份点云合并成 1 份（默认值：1 或 10）
+**作用：**
+- `num_subdivisions_per_laser_scan`：将一帧点云切成 N 份，然后均匀估算每一份的时间戳
+- `num_accumulated_range_data`：将 N 份点云合并成 1 份
+
+**示例：**
+```lua
+options = {
+  ...
+  num_subdivisions_per_laser_scan = 1, -- 指定将一帧点云切成 N 份，然后均匀估算每一份的时间戳，一般为 1
+  ...
+}
+
+TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 1 -- 将 N 份点云合并成 1 份
+```
 
 **工作原理：**
 合并过程中会根据每一份点云的时间戳估算它应该在的位置和角度。
@@ -147,6 +159,13 @@ Cartographer 接收的传感器数据主要有三种：
 - `min_range`：过滤掉雷达周围的遮挡物
 - `max_range`：限制点云的最大有效距离
 
+**示例：**
+```lua
+-- 用于限制点云的有效距离
+TRAJECTORY_BUILDER_2D.min_range = 0.15
+TRAJECTORY_BUILDER_2D.max_range = 5.0
+```
+
 **调参技巧：**
 - `max_range` 不是越大越好
   - 过大会增加计算量
@@ -164,6 +183,12 @@ Cartographer 接收的传感器数据主要有三种：
 - 降低点云密度
 - 限制两个点之间的最小距离
 
+**示例：**
+```lua
+-- 体素滤波的大小设置，用来降低点云密度
+TRAJECTORY_BUILDER_2D.voxel_filter_size = 0.05
+```
+
 **效果：**
 - 调大可以降低计算量，但建图质量也会降低
 - 常用值：`0.025`（2.5cm）或 `0.05`（5cm）
@@ -177,6 +202,15 @@ Cartographer 接收的传感器数据主要有三种：
 - 一般维持在 12Hz 左右的输入就好
 
 **示例：**
+```lua
+options = {
+  ...
+  rangefinder_sampling_ratio = 1., -- 点云数据输入频率限制
+  ...
+}
+```
+
+**调参技巧：**
 - 如果雷达输出频率为 30Hz，可以将此参数设置为 `0.33`，仅保留 33% 的输入
 - 如果机器内存和算力充足，越大越好
 - 根据实际情况调整
@@ -188,6 +222,15 @@ Cartographer 接收的传感器数据主要有三种：
 **作用：**
 - 打开里程计数据输入
 
+**示例：**
+```lua
+options = {
+  ...
+  use_odometry = true, -- 是否使用里程计，如果使用要求一定要有 odom 的 tf
+  ...
+}
+```
+
 **传感器选型建议：**
 - 关注短时间内的精度
 - 里程计的广义定义：不一定只能是轮式里程计
@@ -197,6 +240,11 @@ Cartographer 接收的传感器数据主要有三种：
 ### 4.3 IMU 参数
 
 **参数：** `TRAJECTORY_BUILDER_2D.use_imu_data`
+
+**示例：**
+```lua
+TRAJECTORY_BUILDER_2D.use_imu_data = false -- 打开 IMU 数据输入
+```
 
 **作用：**
 - 打开 IMU 数据输入
@@ -222,6 +270,7 @@ Cartographer 接收的传感器数据主要有三种：
 将以下三个参数设置成 0：
 
 ```lua
+-- 可以将下面三个参数设置成 0 来关闭后端
 POSE_GRAPH.optimize_every_n_nodes = 0
 POSE_GRAPH.constraint_builder.sampling_ratio = 0
 POSE_GRAPH.global_sampling_ratio = 0
@@ -238,6 +287,12 @@ POSE_GRAPH.global_sampling_ratio = 0
 - 使用很多幅 Submap 来构成一幅大地图
 - 每个 Submap 包含若干个 Node，每个 Node 就是一帧点云
 - 建图过程中的累计误差通过后端的图优化算法调整每一副 Submap 的位姿来消除，让整体地图形成最优
+
+**示例：**
+```lua
+-- 用多少帧点云来构造一副 Submap，取值越小，每一副 Submap 内的累计误差就会越小
+TRAJECTORY_BUILDER_2D.submaps.num_range_data = 90
+```
 
 #### 参数取值策略
 
@@ -281,6 +336,11 @@ POSE_GRAPH.global_sampling_ratio = 0
 
 **开关参数：** `use_online_correlative_scan_matching`
 
+**示例：**
+```lua
+TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true -- RTCSM 匹配器开关
+```
+
 **作用：**
 - 在 Submap 构建流程中的第一个匹配器
 - 用于较大范围较粗略的搜索点云在 Submap 上的位置
@@ -305,6 +365,12 @@ POSE_GRAPH.global_sampling_ratio = 0
 **关键参数：**
 - `real_time_correlative_scan_matcher.linear_search_window`（单位：米）
 - `real_time_correlative_scan_matcher.angular_search_window`（单位：弧度）
+
+**示例：**
+```lua
+TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = 1  -- 在预测位置的平移半径内进行搜索，单位是米
+TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.angular_search_window = math.rad(90)  -- 在预测位置的旋转角度范围内进行搜索，单位是弧度
+```
 
 **作用：**
 指定 RTCSM 在预测位置的平移半径和旋转角度范围内进行搜索
@@ -342,6 +408,11 @@ POSE_GRAPH.global_sampling_ratio = 0
 
 **参数：** `POSE_GRAPH.optimize_every_n_nodes`
 
+**示例：**
+```lua
+POSE_GRAPH.optimize_every_n_nodes = 30
+```
+
 **作用：**
 - 控制全局优化的频率
 - 每插入 N 个节点后执行一次优化
@@ -373,6 +444,12 @@ POSE_GRAPH.global_sampling_ratio = 0
 - `POSE_GRAPH.constraint_builder.sampling_ratio`
 - `POSE_GRAPH.global_sampling_ratio`
 
+**示例：**
+```lua
+POSE_GRAPH.constraint_builder.sampling_ratio = 0.3
+POSE_GRAPH.global_sampling_ratio = 0.01
+```
+
 **作用：**
 - 控制用于构建约束的节点采样比例
 - 降低计算量
@@ -387,8 +464,8 @@ POSE_GRAPH.global_sampling_ratio = 0
 **参数：**
 ```lua
 POSE_GRAPH.constraint_builder.max_constraint_distance
-POSE_GRAPH.fast_correlative_scan_matcher.linear_search_window
-POSE_GRAPH.fast_correlative_scan_matcher.angular_search_window
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window
+POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.angular_search_window
 ```
 
 **调参策略：**
@@ -641,13 +718,13 @@ max_num_final_iterations = 更大的值
 **解决方案：**
 1. 打开 RTCSM 匹配器：
    ```lua
-   use_online_correlative_scan_matching = true
+   TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
    ```
 
 2. 增大搜索窗口：
    ```lua
-   real_time_correlative_scan_matcher.linear_search_window = 0.2
-   real_time_correlative_scan_matcher.angular_search_window = math.rad(30)
+   TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.linear_search_window = 0.2
+   TRAJECTORY_BUILDER_2D.real_time_correlative_scan_matcher.angular_search_window = math.rad(30)
    ```
 
 3. 降低移动速度进行建图
@@ -669,28 +746,32 @@ max_num_final_iterations = 更大的值
 **解决方案：**
 1. 增大子图大小：
    ```lua
-   submaps.num_range_data = 90  -- 从30增加到90
+   TRAJECTORY_BUILDER_2D.submaps.num_range_data = 90  -- 从30增加到90
    ```
 
 2. 降低点云输入频率：
    ```lua
-   rangefinder_sampling_ratio = 0.33  -- 降低到33%
+   options = {
+      ...
+      rangefinder_sampling_ratio = 0.33, -- 降低到33%
+      ...
+   }
    ```
 
 3. 增大体素滤波尺寸：
    ```lua
-   voxel_filter_size = 0.05  -- 从0.025增加到0.05
+   TRAJECTORY_BUILDER_2D.voxel_filter_size = 0.05  -- 从0.025增加到0.05
    ```
 
 4. 降低后端优化频率：
    ```lua
-   optimize_every_n_nodes = 90  -- 增大优化间隔
+   POSE_GRAPH.optimize_every_n_nodes = 90  -- 增大优化间隔
    ```
 
 5. 降低约束采样率：
    ```lua
-   constraint_builder.sampling_ratio = 0.1
-   global_sampling_ratio = 0.001
+   POSE_GRAPH.constraint_builder.sampling_ratio = 0.1
+   POSE_GRAPH.global_sampling_ratio = 0.001
    ```
 
 ### 10.3 累计误差过大
@@ -709,13 +790,17 @@ max_num_final_iterations = 更大的值
 **解决方案：**
 1. 减小子图大小：
    ```lua
-   submaps.num_range_data = 30  -- 减少到30
+   TRAJECTORY_BUILDER_2D.submaps.num_range_data = 30  -- 减少到30
    ```
 
 2. 如果传感器质量差，关闭运动畸变矫正：
    ```lua
-   num_subdivisions_per_laser_scan = 1
-   num_accumulated_range_data = 1
+   options = {
+      ...
+      num_subdivisions_per_laser_scan = 1,
+      ...
+   }
+   TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 1
    ```
 
 3. 降低移动速度
@@ -724,7 +809,7 @@ max_num_final_iterations = 更大的值
 
 5. 增加优化频率：
    ```lua
-   optimize_every_n_nodes = 30
+   POSE_GRAPH.optimize_every_n_nodes = 30
    ```
 
 ### 10.4 回环检测失败
@@ -742,18 +827,18 @@ max_num_final_iterations = 更大的值
 **解决方案：**
 1. 降低匹配分数阈值：
    ```lua
-   constraint_builder.min_score = 0.45  -- 从0.55降低到0.45
+   POSE_GRAPH.constraint_builder.min_score = 0.45  -- 从0.55降低到0.45
    ```
 
 2. 增大搜索窗口：
    ```lua
-   fast_correlative_scan_matcher.linear_search_window = 10
-   fast_correlative_scan_matcher.angular_search_window = math.rad(45)
+   POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.linear_search_window = 10
+   POSE_GRAPH.constraint_builder.fast_correlative_scan_matcher.angular_search_window = math.rad(45)
    ```
 
 3. 增加采样率：
    ```lua
-   global_sampling_ratio = 0.01  -- 提高全局采样率
+   POSE_GRAPH.global_sampling_ratio = 0.01  -- 提高全局采样率
    ```
 
 ### 10.5 IMU 数据异常
@@ -771,7 +856,7 @@ max_num_final_iterations = 更大的值
 **解决方案：**
 1. 2D SLAM 中可以尝试关闭 IMU：
    ```lua
-   use_imu_data = false
+   TRAJECTORY_BUILDER_2D.use_imu_data = false
    ```
 
 2. 检查并正确配置 IMU 坐标系
@@ -795,13 +880,17 @@ max_num_final_iterations = 更大的值
 **解决方案：**
 1. 降低里程计权重：
    ```lua
-   odometry_translation_weight = 1e1  -- 降低权重
-   odometry_rotation_weight = 0  -- 轮式编码器旋转不可靠
+   POSE_GRAPH.optimization_problem.odometry_translation_weight = 1e1  -- 降低权重
+   POSE_GRAPH.optimization_problem.odometry_rotation_weight = 0  -- 轮式编码器旋转不可靠
    ```
 
 2. 尝试不使用里程计：
    ```lua
-   use_odometry = false
+   options = {
+      ...
+      use_odometry = false,
+      ...
+   }
    ```
 
 3. 校准或更换里程计传感器
