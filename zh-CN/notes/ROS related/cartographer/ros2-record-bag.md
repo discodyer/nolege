@@ -16,7 +16,7 @@ comment: true
 - 已安装 ROS2
 - 拥有适当的传感器 (如激光雷达、IMU、里程计等)
 
-## 安装必要工具
+### 安装必要工具
 
 首先安装 rosbag2 和相关工具：
 
@@ -24,7 +24,7 @@ comment: true
 sudo apt install ros-${ROS_DISTRO}-rosbag2 ros-${ROS_DISTRO}-rviz2
 ```
 
-## 确定要录制的主题
+### 确定要录制的主题
 
 Cartographer 通常需要以下类型的数据：
 
@@ -39,7 +39,9 @@ Cartographer 通常需要以下类型的数据：
 ros2 topic list
 ```
 
-## 录制 bag 包的基本命令
+## 录制 bag 包
+
+### 录制 bag 包的基本命令
 
 使用以下命令录制指定主题：
 
@@ -53,7 +55,7 @@ ros2 bag record -o <bag_name> <topic1> <topic2> <topic3> ...
 ros2 bag record -o cartographer_$(date +%y-%m-%d-%H-%M-%S) /scan /imu
 ```
 
-## 优化录制设置
+### 优化录制设置
 
 1. **使用压缩**：减少 bag 文件大小
    ```bash
@@ -76,7 +78,25 @@ ros2 bag record -o cartographer_$(date +%y-%m-%d-%H-%M-%S) /scan /imu
 ros2 bag play cartographer_debug
 ```
 
-## 断网后录制被中断
+## 常见问题
+
+### 时间戳问题
+
+有时回放数据不正常，很多时候是时间戳的问题, bag 文件的时间并非本机时间，在默认情况下，ROS 使用 ubuntu 系统的时间，也就是 wall clock time。但 bag 文件中记录的是历史时间，所以 play 之前要告诉 ROS 启用 simulated time
+
+启动节点的时候设置参数 `use_sim_time:=true`
+
+```bash
+ros2 launch example_package example.launch.py use_sim_time:=true
+```
+
+回放的时候加上 `--clock`
+
+```bash
+ros2 bag play --clock cartographer_debug
+```
+
+### 断网后录制被中断
 
 有些时候小车会开出WiFi的信号范围，这时候录制的bag会被中断，我们可以设置 `ROS_LOCALHOST_ONLY` 环境变量来将ROS2通信限制在本地主机，这样你的ROS2系统及其话题、服务和操作都将对本地网络上的其他计算机不可见。在有多个机器人的场景下也非常有用，可以避免多个机器人向同一个话题发布消息，从而导致异常行为。你可以使用以下命令设置此环境变量。
 
