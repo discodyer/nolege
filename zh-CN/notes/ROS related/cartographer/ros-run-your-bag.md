@@ -7,6 +7,11 @@ comment: true
 
 # 在您自己的 bag 上运行 Cartographer ROS
 
+> [!NOTE]
+> 本文档翻译自 [Cartographer ROS - Running Cartographer ROS on your own bag](https://google-cartographer-ros.readthedocs.io/en/latest/your_bag.html)
+> 
+> Apache License, Version 2.0
+
 现在您已经在几个提供的 bag 文件上运行了 Cartographer ROS，可以继续让 Cartographer 使用您自己的数据了。
 找到一个您想用于 SLAM 的 `.bag` 记录文件，然后按照本教程进行操作。
 

@@ -7,6 +7,11 @@ comment: true
 
 # 在示例 bag 上运行 Cartographer ROS
 
+> [!NOTE]
+> 本文档翻译自 [Cartographer ROS - Running Cartographer ROS on a demo bag](https://google-cartographer-ros.readthedocs.io/en/latest/demos.html)
+> 
+> Apache License, Version 2.0
+
 现在 Cartographer 和 Cartographer 的 ROS 集成已经安装完成，您可以下载示例 bag 文件（例如 [德意志博物馆](https://en.wikipedia.org/wiki/Deutsches_Museum)的 2D 和 3D bag 采集数据）到已知位置（在本例中为 `~/Downloads`），并使用 `roslaunch` 启动演示。
 
 启动文件将自动启动 `roscore` 和 `rviz`。

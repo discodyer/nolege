@@ -8,6 +8,11 @@ comment: true
 
 # 编译 Cartographer ROS
 
+> [!NOTE]
+> 本文档翻译自 [Cartographer ROS - Compiling Cartographer ROS](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html)
+> 
+> Apache License, Version 2.0
+
 ## 系统要求 {#sys-requirements}
 
 Cartographer ROS 的系统要求与 [Cartographer 的要求](https://google-cartographer.readthedocs.io/en/latest/#system-requirements)相同。
