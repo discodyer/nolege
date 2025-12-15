@@ -19,7 +19,8 @@ comment: true
 
 ### 入门篇
 
-- **[ROS2 安装 Cartographer 教程 ](ros2-compilation.md)** - 包含了从 APT 源和从源码编译的教程
+- **[ROS2 安装 Cartographer 教程](ros2-compilation.md)** - 包含了从 APT 源和从源码编译的教程
+- **[openEuler 24.03 安装 Cartographer 教程](ros2-compilation-openeuler.md)** - 包含了在openEuler下从 dnf 源和源码编译的教程
 - **[ROS2 下录制和回放 Bag 包教程](ros2-record-bag.md)** - 指导你如何在 ROS2 环境中录制 bag 包，这些数据将用于调试 Cartographer SLAM 算法。
 - **[参数实战调优](parameter-details.md)** - 基于实战经验的参数调优指南，包含传感器配置、前端/后端参数调整、常见问题解决方案。
 
