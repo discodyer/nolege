@@ -83,36 +83,12 @@ cd ~/cartographer_ws
 
 ### 3. 下载源码
 
-#### 使用 vcs 工具（推荐）
-
-创建一个 `cartographer.repos` 文件：
-
-```bash
-cat > cartographer.repos << 'EOF'
-repositories:
-  cartographer:
-    type: git
-    url: https://github.com/ros2/cartographer.git
-    version: ros2
-  cartographer_ros:
-    type: git
-    url: https://github.com/ros2/cartographer_ros.git
-    version: ros2
-EOF
-```
-
-然后导入仓库：
-
-```bash
-vcs import src < cartographer.repos
-```
-
-#### 手动克隆（备选方案）
+`ros2/cartographer_ros:ros2` 的源码编译后有报错 `ERROR: flag 'collect_metrics' was defined more than once`，所以这里使用我修复后的代码，[PR#84](https://github.com/ros2/cartographer_ros/pull/84)
 
 ```bash
 cd ~/cartographer_ws/src
 git clone -b ros2 https://github.com/ros2/cartographer.git
-git clone -b ros2 https://github.com/ros2/cartographer_ros.git
+git clone -b fix-offline-node https://github.com/discodyer/cartographer_ros.git
 ```
 
 ### 4. 安装依赖
