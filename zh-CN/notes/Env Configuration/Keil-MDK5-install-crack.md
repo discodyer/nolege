@@ -29,7 +29,7 @@ title: Keil MDK5 安装破解教程
 
 > Keil下载其他版本只需要把链接`https://armkeil.blob.core.windows.net/eval/MDK539.EXE`最后的三个数字改成你想要的版本就行
 
-- [Keil MDK 注册机](https://1drv.ms/u/s!ApkfmL_xaiYQmpkOJVTvugKPaNsuYA?e=THJGzU) Onedrive 分享 密码: 1234
+- [Keil MDK 注册机](https://1drv.ms/u/c/10266af1bf981f99/IQCEUBJ7fNl9R5WSqCVN7SGYAQF6TcLGZJjlkBpzbqHsSp4?e=2adqoF) Onedrive 分享 密码: 1234 解压密码：123456
 
 下面是`STM32CubeMX`和`STM32CubeIDE`的下载链接，**注意需要先安装`Java`运行环境**
 
