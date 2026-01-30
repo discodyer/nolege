@@ -29,7 +29,9 @@ title: Keil MDK5 安装破解教程
 
 > Keil下载其他版本只需要把链接`https://armkeil.blob.core.windows.net/eval/MDK539.EXE`最后的三个数字改成你想要的版本就行
 
-- [Keil MDK 注册机](https://1drv.ms/u/c/10266af1bf981f99/IQCEUBJ7fNl9R5WSqCVN7SGYAQF6TcLGZJjlkBpzbqHsSp4?e=2adqoF) Onedrive 分享 密码: 1234 解压密码：123456
+- Keil MDK 注册机  
+  [Onedrive 分享](https://1drv.ms/u/c/10266af1bf981f99/IQCEUBJ7fNl9R5WSqCVN7SGYAQF6TcLGZJjlkBpzbqHsSp4?e=2adqoF) 提取码: `1234` 解压密码：`123456`  
+  [夸克网盘分享](https://pan.quark.cn/s/28ffc2cba05d?pwd=4APE) 提取码：`4APE` 解压密码：`123456`  
 
 下面是`STM32CubeMX`和`STM32CubeIDE`的下载链接，**注意需要先安装`Java`运行环境**
 
@@ -47,8 +49,9 @@ title: Keil MDK5 安装破解教程
 
 下面是之前从不知道哪边得到的资料包，好像是从淘宝商家那边下载的，没啥用，有需要的自己下载
 
-- [STM32F103RCT6 资料包](https://1drv.ms/u/s!ApkfmL_xaiYQhfsHyR_kbNgAzLfsmA?e=IUIhL8) Onedrive 分享 密码: 1234
-
+- STM32F103RCT6 资料包  
+  [Onedrive 分享](https://1drv.ms/u/s!ApkfmL_xaiYQhfsHyR_kbNgAzLfsmA?e=IUIhL8) 提取码: `1234`  
+  [夸克网盘分享](https://pan.quark.cn/s/2aafe4150b38?pwd=e1Gp) 提取码：`e1Gp`
 ## 安装教程
 
 ### 安装之前的环境准备
