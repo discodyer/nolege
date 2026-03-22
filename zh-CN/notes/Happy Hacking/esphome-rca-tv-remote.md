@@ -1,9 +1,10 @@
 ---
 tags:
-  - HomeAssistant
+  - hacking
   - 逆向
-  - 遥控
+  - HomeAssistant
   - ESPHome
+  - 遥控
 ---
 # 使用ESPHome代替RCA电视遥控器
 
